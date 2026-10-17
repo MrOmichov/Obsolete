@@ -1,0 +1,22 @@
+[gd_scene load_steps=3 format=3]
+
+[ext_resource type="Script" path="res://scripts/day_night_manager.gd" id="1_day_night_manager"]
+[ext_resource type="Script" path="res://scripts/world_light_controller.gd" id="2_world_light_controller"]
+
+[node name="Main" type="Node2D"]
+
+[node name="DayNightManager" type="Node" parent="."]
+script = ExtResource("1_day_night_manager")
+
+[node name="WorldLight" type="CanvasModulate" parent="."]
+script = ExtResource("2_world_light_controller")
+day_night_manager_path = NodePath("../DayNightManager")
+
+[node name="Backdrop" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.55, 0.52, 0.47, 1)
