@@ -65,7 +65,8 @@ func _ready() -> void:
 		InputMap.action_add_event("interact", event)
 
 	hint.hide()
-	visual.sprite_frames = _load_sprite_frames(asset_folder)
+	if visual.sprite_frames == null or not visual.sprite_frames.has_animation("idle") or visual.sprite_frames.get_frame_count("idle") == 0:
+		visual.sprite_frames = _load_sprite_frames(asset_folder)
 	visual.play("idle")
 	visual.animation_finished.connect(_on_visual_animation_finished)
 

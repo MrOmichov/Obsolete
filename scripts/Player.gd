@@ -12,7 +12,8 @@ func _ready() -> void:
 	camera.position_smoothing_enabled = true
 	camera.position_smoothing_speed = 5.0
 	if visual:
-		visual.sprite_frames = _load_sprite_frames("res://assets/characters/player")
+		if visual.sprite_frames == null or not visual.sprite_frames.has_animation("idle") or visual.sprite_frames.get_frame_count("idle") == 0:
+			visual.sprite_frames = _load_sprite_frames("res://assets/characters/player")
 		visual.play("idle")
 
 func _physics_process(delta: float) -> void:
