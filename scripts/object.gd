@@ -7,6 +7,8 @@ signal broken
 @export var texture_broken: Texture2D
 @export var start_broken: bool = false
 @export var hint_text: String = "[E]"
+@export var object_id: StringName = &"generator"
+@export var required_parts: int = 1
 
 # Если нужно, чтобы объект ломался сам: интервал в секундах (0 = не ломается сам)
 @export var auto_break_min: float = 30.0
@@ -62,10 +64,16 @@ func _unhandled_input(event: InputEvent) -> void:
 		get_viewport().set_input_as_handled()
 		repair()
 
-func repair() -> void:
+func repair() -> bool:
+	if not is_broken:
+		return false
+	var prototype := get_tree().get_first_node_in_group("prototype")
+	if prototype and not bool(prototype.call("try_repair", self)):
+		return false
 	_set_broken(false)
 	repaired.emit()
 	_schedule_break()
+	return true
 
 func break_down() -> void:
 	_set_broken(true)

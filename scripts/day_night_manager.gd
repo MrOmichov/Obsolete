@@ -9,6 +9,10 @@ var remaining_seconds: float = Global.DAWN_DURATION_SECONDS
 var _dialogue_paused: bool = false
 
 
+func _ready() -> void:
+	add_to_group("day_night")
+
+
 func _process(delta: float) -> void:
 	if _dialogue_paused:
 		return

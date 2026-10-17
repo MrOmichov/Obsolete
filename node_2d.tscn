@@ -1,9 +1,9 @@
-[gd_scene format=3 uid="uid://c2cdbk2ehc4o3"]
+[gd_scene load_steps=11 format=3 uid="uid://dhqfwp3hdk8d8"]
 
 [ext_resource type="Texture2D" uid="uid://bwmqyyetif1yb" path="res://sprites/BackgroundPlaceholder.png" id="1_0e48y"]
-[ext_resource type="Script" uid="uid://csepwwmjfisjk" path="res://scripts/dayANDnight.gd" id="1_kdubu"]
+[ext_resource type="Script" path="res://scripts/dayANDnight.gd" id="1_kdubu"]
 [ext_resource type="Texture2D" uid="uid://cpq3hrkitq04y" path="res://sprites/PlayerPlaceholder.jpg" id="2_epypp"]
-[ext_resource type="Script" uid="uid://cnx3immd8qcdm" path="res://scripts/Player.gd" id="3_epypp"]
+[ext_resource type="Script" path="res://scripts/Player.gd" id="3_epypp"]
 [ext_resource type="Texture2D" uid="uid://dsu3ty6xqjx4y" path="res://sprites/WallsPlaceholder.jpg" id="4_0hol4"]
 [ext_resource type="PackedScene" uid="uid://cj4828gu1tdg2" path="res://zlobity/npc.tscn" id="5_q6r6c"]
 [ext_resource type="PackedScene" uid="uid://bqdpsxdpbikvj" path="res://zlobity/object.tscn" id="7_d21ai"]
@@ -16,17 +16,17 @@ outline_color = Color(0, 0, 0, 1)
 size = Vector2(86.5, 86)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_13qdw"]
-size = Vector2(2537.74, 1437.6884)
+size = Vector2(2537.74, 1437.69)
 
-[node name="Node2D" type="Node2D" unique_id=704313765]
+[node name="Node2D" type="Node2D"]
 
-[node name="CanvasModulate" type="CanvasModulate" parent="." unique_id=981573759]
-color = Color(0.37716255, 0.37716258, 0.37716255, 1)
+[node name="CanvasModulate" type="CanvasModulate" parent="."]
+color = Color(0.377163, 0.377163, 0.377163, 1)
 script = ExtResource("1_kdubu")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="CanvasModulate" unique_id=1582949155]
+[node name="CanvasLayer" type="CanvasLayer" parent="CanvasModulate"]
 
-[node name="Timer" type="Label" parent="CanvasModulate/CanvasLayer" unique_id=963663474]
+[node name="Timer" type="Label" parent="CanvasModulate/CanvasLayer"]
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
@@ -35,44 +35,44 @@ offset_bottom = 23.0
 grow_horizontal = 0
 label_settings = SubResource("LabelSettings_xrivr")
 
-[node name="PLACEHOLDER FLOOR" type="Sprite2D" parent="." unique_id=2140737626]
+[node name="PLACEHOLDER FLOOR" type="Sprite2D" parent="."]
 position = Vector2(-1093, 1271)
 texture = ExtResource("1_0e48y")
 
-[node name="player" type="CharacterBody2D" parent="." unique_id=950324539]
+[node name="player" type="CharacterBody2D" parent="."]
 script = ExtResource("3_epypp")
 
-[node name="PLAYER PLACEHOLDER" type="Sprite2D" parent="player" unique_id=776353423]
-position = Vector2(-43.187508, 38.187492)
-scale = Vector2(0.12609492, 0.12609492)
+[node name="PLAYER PLACEHOLDER" type="Sprite2D" parent="player"]
+position = Vector2(-43.1875, 38.1875)
+scale = Vector2(0.126095, 0.126095)
 texture = ExtResource("2_epypp")
 
-[node name="Camera2D" type="Camera2D" parent="player" unique_id=1543996850]
+[node name="Camera2D" type="Camera2D" parent="player"]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="player" unique_id=1272749906]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
 position = Vector2(-43.25, 38)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="wall" type="StaticBody2D" parent="." unique_id=609851475]
-position = Vector2(-255.00012, 14.0000305)
-scale = Vector2(0.04492185, 0.43263885)
+[node name="wall" type="StaticBody2D" parent="."]
+position = Vector2(-255, 14)
+scale = Vector2(0.0449218, 0.432639)
 
-[node name="107215KamennayaStenaEtazhRokTeksturaUzor2560x1440" type="Sprite2D" parent="wall" unique_id=1337525683]
-scale = Vector2(1, 1.0000001)
+[node name="107215KamennayaStenaEtazhRokTeksturaUzor2560x1440" type="Sprite2D" parent="wall"]
+scale = Vector2(1, 1)
 texture = ExtResource("4_0hol4")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="wall" unique_id=1241164389]
-position = Vector2(0.002790451, -7.247925e-05)
-scale = Vector2(1, 1.0000002)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="wall"]
+position = Vector2(0.00279045, -7.24792e-05)
+scale = Vector2(1, 1)
 shape = SubResource("RectangleShape2D_13qdw")
 
-[node name="Npc" parent="." unique_id=1255221455 instance=ExtResource("5_q6r6c")]
+[node name="Npc" parent="." instance=ExtResource("5_q6r6c")]
 position = Vector2(186, 38)
 dialogue = Array[String](["ETO PLACEHOLDER DETKA", "11!!!!!!!!!!!!!!!!1!!!!!!!!!!"])
 
-[node name="Npc2" parent="." unique_id=946122272 instance=ExtResource("5_q6r6c")]
+[node name="Npc2" parent="." instance=ExtResource("5_q6r6c")]
 position = Vector2(-14, 243)
 dialogue = Array[String](["ETO TOZHE PLACEHOLDER"])
 
-[node name="Object" parent="." unique_id=1581159490 instance=ExtResource("7_d21ai")]
+[node name="Object" parent="." instance=ExtResource("7_d21ai")]
 position = Vector2(-46, -122)
