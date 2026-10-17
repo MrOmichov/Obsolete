@@ -1,0 +1,44 @@
+[gd_scene format=3 uid="uid://bqdpsxdpbikvj"]
+
+[ext_resource type="Script" uid="uid://cg2h4hgkci2ud" path="res://scripts/object.gd" id="1_0uqpa"]
+[ext_resource type="Texture2D" uid="uid://0mk06i7edwmh" path="res://sprites/ObjectPlaceholder.jpeg" id="1_glfcq"]
+[ext_resource type="Texture2D" uid="uid://b17lyv8mxyyqc" path="res://sprites/ObjectBrokenPlaceholder.jpg" id="3_kgeqm"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xrivr"]
+size = Vector2(141.5, 93)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_xrivr"]
+radius = 138.17743
+
+[sub_resource type="LabelSettings" id="LabelSettings_xrivr"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Object" type="StaticBody2D" unique_id=1581159490]
+script = ExtResource("1_0uqpa")
+texture_working = ExtResource("1_glfcq")
+texture_broken = ExtResource("3_kgeqm")
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=238864703]
+scale = Vector2(0.094062485, 0.09406249)
+texture = ExtResource("1_glfcq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1421962566]
+position = Vector2(0.25, 0)
+shape = SubResource("RectangleShape2D_xrivr")
+
+[node name="Area2D" type="Area2D" parent="." unique_id=933344030]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D" unique_id=1382386107]
+shape = SubResource("CircleShape2D_xrivr")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="." unique_id=232859605]
+
+[node name="Label" type="Label" parent="CanvasLayer" unique_id=2130991120]
+offset_left = -9.0
+offset_top = -104.0
+offset_right = 14.0
+offset_bottom = -81.0
+text = "[E]"
+label_settings = SubResource("LabelSettings_xrivr")
+metadata/_edit_use_anchors_ = true

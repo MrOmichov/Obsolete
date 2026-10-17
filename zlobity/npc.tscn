@@ -1,0 +1,59 @@
+[gd_scene format=3 uid="uid://cj4828gu1tdg2"]
+
+[ext_resource type="Script" uid="uid://dpo4pt7nhjtfg" path="res://scripts/Npc.gd" id="1_xxcha"]
+[ext_resource type="Texture2D" uid="uid://c2yp5jr78fyvp" path="res://sprites/NPCPlaceholder.jpg" id="2_kh24r"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ul7y6"]
+size = Vector2(76, 76)
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mcvl2"]
+radius = 105.26158
+
+[sub_resource type="LabelSettings" id="LabelSettings_bc6q4"]
+outline_size = 3
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_d61ma"]
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[node name="Npc" type="StaticBody2D" unique_id=1255221455]
+script = ExtResource("1_xxcha")
+
+[node name="NpcPlaceholder" type="Sprite2D" parent="." unique_id=1774962355]
+scale = Vector2(0.07755103, 0.077551015)
+texture = ExtResource("2_kh24r")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1672842318]
+shape = SubResource("RectangleShape2D_ul7y6")
+
+[node name="InteractionZone" type="Area2D" parent="." unique_id=557239041]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="InteractionZone" unique_id=1367046470]
+shape = SubResource("CircleShape2D_mcvl2")
+debug_color = Color(0, 0.598171, 0.1298278, 0.41960785)
+
+[node name="Hint" type="Label" parent="." unique_id=1242592076]
+offset_left = -18.0
+offset_top = -60.0
+offset_right = 21.0
+offset_bottom = -37.0
+text = "[E]"
+label_settings = SubResource("LabelSettings_bc6q4")
+horizontal_alignment = 1
+
+[node name="Panel" type="Panel" parent="." unique_id=1774615303]
+offset_left = -118.0
+offset_top = 42.0
+offset_right = 126.0
+offset_bottom = 84.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Panel" unique_id=1390896131]
+layout_mode = 0
+offset_top = 2.0
+offset_right = 271.0
+offset_bottom = 159.0
+
+[node name="Label" type="Label" parent="Panel/VBoxContainer" unique_id=354412147]
+layout_mode = 2
+label_settings = SubResource("LabelSettings_d61ma")
