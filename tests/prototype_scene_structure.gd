@@ -43,6 +43,9 @@ func _run() -> void:
 	scene._update_prompt()
 	_check(scene.get_node("HUD/PromptPanel/Text").text == "E — прочитать ночной архив",
 		"archive interaction follows the editable marker")
+	scene.free()
+	await process_frame
+	await create_timer(0.15).timeout
 	if failures == 0:
 		print("Editable scene structure passed")
 	quit(0 if failures == 0 else 1)

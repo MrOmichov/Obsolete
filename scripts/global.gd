@@ -8,7 +8,7 @@ enum Phase {
 
 const DAWN_DURATION_SECONDS: float = 30.0
 const DAY_DURATION_SECONDS: float = 60.0
-const NIGHT_DURATION_SECONDS: float = 90.0
+const NIGHT_DURATION_SECONDS: float = 180.0
 
 const LIGHT_TRANSITION_DURATION_SECONDS: float = 3.0
 const DAWN_LIGHT_COLOR: Color = Color(0.86, 0.78, 0.64)

@@ -22,6 +22,13 @@ func _run() -> void:
 	await process_frame
 	await process_frame
 
+	var music := game.get_node("Music") as AudioStreamPlayer
+	_check(music.stream is AudioStreamMP3 and music.playing, "location soundtrack starts")
+	_check(music.stream.loop, "soundtrack loops")
+	await _tap_key(KEY_M)
+	_check(music.stream_paused, "M mutes music")
+	await _tap_key(KEY_M)
+	_check(not music.stream_paused, "M resumes music")
 	var cycle: Node = game.get_node("DayNightManager")
 	var player: CharacterBody2D = game.get("player")
 	_check(cycle.get("current_phase") == Global.Phase.DAWN, "run starts at dawn")
@@ -70,13 +77,13 @@ func _run() -> void:
 	var power: StaticBody2D = game.get("power_object")
 	_check(not game.call("try_repair", terminal), "terminal repair is rejected before archive data")
 	_check(game.get("parts") == 1, "rejected terminal repair does not consume a part")
-	player.position = Vector2(840, 505)
+	player.position = Vector2(1445, 863)
 	player.velocity = Vector2.ZERO
 	await create_timer(0.1).timeout
 	Input.action_press("move_right")
 	await create_timer(0.65).timeout
 	Input.action_release("move_right")
-	_check(player.position.x < 890, "closed gate collision blocks horizontal movement")
+	_check(player.position.x < 1490, "closed gate collision blocks horizontal movement")
 
 	player.position = power.global_position + Vector2(0, 90)
 	player.velocity = Vector2.ZERO
@@ -88,13 +95,13 @@ func _run() -> void:
 	_check(game.get("parts") == 0, "power repair consumes the part")
 	_check(game.get("gate_shape").disabled, "power repair opens the gate collision")
 	_check(not game.call("collect_data"), "archive data is unavailable outside night")
-	player.position = Vector2(840, 505)
+	player.position = Vector2(1445, 863)
 	player.velocity = Vector2.ZERO
 	await create_timer(0.1).timeout
 	Input.action_press("move_right")
 	await create_timer(0.65).timeout
 	Input.action_release("move_right")
-	_check(player.position.x > 910, "open gate allows horizontal movement through the passage")
+	_check(player.position.x > 1515, "open gate allows horizontal movement through the passage")
 
 	cycle.call("_enter_phase", Global.Phase.DAY)
 	cycle.call("_enter_phase", Global.Phase.NIGHT)
@@ -132,7 +139,10 @@ func _run() -> void:
 	player.position = Vector2(270, 690)
 	_check(game.call("return_home"), "home accepts a player after terminal repair")
 	_check(game.get("home_reached"), "home visit is recorded")
-	cycle.call("_enter_phase", Global.Phase.DAWN)
+	_check(game.call("return_home"), "second home interaction rests until dawn")
+	_check(cycle.get("current_phase") == Global.Phase.DAWN, "rest reaches dawn")
+	_check(game.get_node("HUD/Ending").visible, "chapter ending is shown")
+	_check(cycle.call("is_dialogue_paused"), "ending freezes the phase clock")
 	_check(game.get("completed"), "returning home through dawn completes the run")
 	await process_frame
 	await create_timer(0.1).timeout
@@ -153,6 +163,11 @@ func _run() -> void:
 		_check(not game.get("completed"), "restart clears completion state")
 		_check(game.get_node("DayNightManager").get("current_phase") == Global.Phase.DAWN, "restart resets the phase to dawn")
 
+	await process_frame
+	await process_frame
+	current_scene.free()
+	await process_frame
+	await create_timer(0.15).timeout
 	if failures == 0:
 		print("Prototype smoke passed")
 		quit(0)

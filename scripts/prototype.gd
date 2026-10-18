@@ -20,6 +20,9 @@ var hit_cooldown: float = 0.0
 var threat_distance: float = 9999.0
 var _notice_time: float = 0.0
 var _pulse: float = 0.0
+var music_tween: Tween
+var music_muted: bool = false
+@onready var music: AudioStreamPlayer = $Music
 
 @onready var player: CharacterBody2D = $Actors/Player
 @onready var gate_shape: CollisionShape2D = $Board/Walls/Gate/CollisionShape2D
@@ -54,6 +57,12 @@ func _ready() -> void:
 	power_object.repaired.connect(_on_power_repaired)
 	terminal_object.repaired.connect(_on_terminal_repaired)
 	_restart_button.pressed.connect(restart_run)
+	$HUD/Ending/Content/Restart.pressed.connect(restart_run)
+	var soundtrack := load("res://music/The_Perimeter_Watch.mp3") as AudioStreamMP3
+	if soundtrack:
+		soundtrack.loop = true
+		music.stream = soundtrack
+		music.play()
 	_notify("Система просыпается. Найди резистора у блока питания.")
 
 func _on_power_repaired() -> void:
@@ -68,11 +77,11 @@ func _on_terminal_repaired() -> void:
 	_notify("Адрес восстановлен. Вернись в свою ячейку и дождись рассвета.")
 
 func _ensure_input() -> void:
-	for action in {"interact": KEY_E, "demo_phase": KEY_N, "restart_run": KEY_R}:
+	for action in {"interact": KEY_E, "demo_phase": KEY_N, "restart_run": KEY_R, "toggle_music": KEY_M}:
 		if not InputMap.has_action(action):
 			InputMap.add_action(action)
 			var key = InputEventKey.new()
-			key.physical_keycode = {"interact": KEY_E, "demo_phase": KEY_N, "restart_run": KEY_R}[action]
+			key.physical_keycode = {"interact": KEY_E, "demo_phase": KEY_N, "restart_run": KEY_R, "toggle_music": KEY_M}[action]
 			InputMap.action_add_event(action, key)
 	for action in {"move_left": KEY_LEFT, "move_right": KEY_RIGHT, "move_up": KEY_UP, "move_down": KEY_DOWN}:
 		var key = InputEventKey.new()
@@ -147,33 +156,47 @@ func collect_data() -> bool:
 	data_collected = true
 	parts += 1
 	data_sprite.hide()
-	_notify("Архив прочитан: адрес ячейки и контакт +1. Восстанови терминал охлаждения внизу справа.")
+	_notify("Архив прочитан: адрес ячейки и контакт +1. Восстанови терминал в западном крыле.")
 	return true
 
 func return_home() -> bool:
+	if completed:
+		return false
 	if not terminal_repaired:
 		_notify("Это твоё место. Здесь помехи не достают. Сначала восстанови терминал.")
 		return false
+	if home_reached and cycle.current_phase != Global.Phase.DAWN:
+		cycle._enter_phase(Global.Phase.DAWN)
+		return true
 	home_reached = true
-	_notify("Адрес подтверждён. Оставайся в своей ячейке до рассвета.")
+	_notify("Адрес подтверждён. Оставайся до рассвета или нажми E ещё раз, чтобы отдохнуть.")
 	if cycle.current_phase == Global.Phase.DAWN:
 		_finish()
 	return true
 
 func _finish() -> void:
+	if completed:
+		return
 	completed = true
 	threat_active = false
 	cycle.set_dialogue_paused(true)
 	player.velocity = Vector2.ZERO
 	RunProgress.record_completed_task(&"return_home")
-	_notify("РАССВЕТ. Ты вернулся на своё место. Система стабильна. Прототип пройден.", 60.0)
-	_restart_button.show()
+	_notify("РАССВЕТ. Ты вернулся на своё место. Система стабильна. Материнская плата пройдена.", 60.0)
+	$HUD/Ending.show()
+	$HUD/ObjectivePanel.hide()
+	$HUD/PromptPanel.hide()
+	_notice_time = 0.0
 
 func restart_run() -> void:
 	RunProgress.reset_for_new_run()
 	get_tree().reload_current_scene()
 
 func _on_phase_changed(_previous: int, current: int) -> void:
+	if music_tween:
+		music_tween.kill()
+	music_tween = create_tween()
+	music_tween.tween_property(music, "volume_db", -14.0 if current == Global.Phase.NIGHT else -24.0, 3.0)
 	if is_dialogue_open():
 		end_dialogue()
 	threat_active = current == Global.Phase.NIGHT and not completed
@@ -193,13 +216,17 @@ func _on_dawn() -> void:
 		_notify("Рассвет. Помехи ушли, NPC вернулись. Выполненные ремонты сохранены.")
 
 func _unhandled_input(event: InputEvent) -> void:
-	if event.is_action_pressed("restart_run"):
+	if event.is_action_pressed("toggle_music"):
+		music_muted = not music_muted
+		music.stream_paused = music_muted
+		get_viewport().set_input_as_handled()
+	elif event.is_action_pressed("restart_run"):
 		restart_run()
 		get_viewport().set_input_as_handled()
 	elif event.is_action_pressed("demo_phase") and not completed and not is_dialogue_open():
 		cycle._enter_phase(cycle._next_phase(cycle.current_phase))
 		get_viewport().set_input_as_handled()
-	elif event.is_action_pressed("interact"):
+	elif event.is_action_pressed("interact") and not completed:
 		if is_dialogue_open():
 			advance_dialogue()
 			get_viewport().set_input_as_handled()
@@ -221,6 +248,22 @@ func _process(delta: float) -> void:
 	_gate_label.text = "ПРОХОД ОТКРЫТ" if power_repaired else "ПИТАНИЕ ОТКЛЮЧЕНО"
 	_gate_label.modulate = CYAN if power_repaired else AMBER
 	_data_label.text = "ДАННЫЕ ПОЛУЧЕНЫ" if data_collected else ("[E] ПРОЧИТАТЬ АРХИВ" if cycle.current_phase == Global.Phase.NIGHT else "АРХИВ НЕДОСТУПЕН ДО НОЧИ")
+	if not completed:
+		var target := home.global_position
+		if not mentor_supplied:
+			target = $Actors/Resistor.global_position
+		elif not power_repaired:
+			target = power_object.global_position
+		elif not data_collected:
+			target = archive.global_position
+		elif not terminal_repaired:
+			target = terminal_object.global_position
+		target = _route_target(target)
+		var offset := target - player.global_position
+		var direction := "→" if absf(offset.x) > absf(offset.y) and offset.x > 0 else "←"
+		if absf(offset.y) >= absf(offset.x):
+			direction = "↓" if offset.y > 0 else "↑"
+		_objective_label.text += "\n%s  До цели: %d м" % [direction, int(offset.length() / 20.0)]
 	_update_prompt()
 	_update_threat(delta)
 	_update_threat_visual()
@@ -233,10 +276,10 @@ func _objective() -> String:
 	if not power_repaired:
 		return "02 / ПИТАНИЕ\nПочини блок справа от резистора: E рядом."
 	if not data_collected:
-		return "03 / АРХИВ\nНочью забери данные в восточном секторе."
+		return "03 / АРХИВ\nНочью забери данные в дальнем восточном секторе."
 	if not terminal_repaired:
-		return "04 / ВОССТАНОВЛЕНИЕ\nПочини терминал охлаждения внизу справа."
-	return "05 / ВОЗВРАЩЕНИЕ\nE в своей ячейке слева внизу. Дождись рассвета."
+		return "04 / ВОССТАНОВЛЕНИЕ\nПочини терминал в западном крыле."
+	return "05 / ВОЗВРАЩЕНИЕ\nВернись в жилой сектор. E в своей ячейке. Ещё раз E — отдых до рассвета."
 
 func _update_prompt() -> void:
 	_prompt_label.text = "Исследуй плату. Следуй текущей задаче."
@@ -245,7 +288,7 @@ func _update_prompt() -> void:
 	elif is_dialogue_open():
 		_prompt_label.text = "E — продолжить разговор · время приостановлено"
 	elif player.global_position.distance_to(home.global_position) < 100:
-		_prompt_label.text = "E — вернуться на своё место · безопасная зона"
+		_prompt_label.text = "E — отдохнуть до рассвета" if home_reached else "E — вернуться на своё место · безопасная зона"
 	elif player.global_position.distance_to(archive.global_position) < 112:
 		_prompt_label.text = "E — прочитать ночной архив"
 	else:
@@ -296,3 +339,32 @@ func _update_threat_visual() -> void:
 	for i in range(25):
 		points.append(Vector2.from_angle(_pulse + PI * i / 24) * radius)
 	_threat_trace.points = points
+
+func _exit_tree() -> void:
+	# Release playback before scene reload or shutdown.
+	music.stop()
+
+func _route_target(destination: Vector2) -> Vector2:
+	var here := player.global_position
+	var here_zone := _board_zone(here)
+	var target_zone := _board_zone(destination)
+	if here_zone < target_zone:
+		var forward: Array[Vector2] = [Vector2(1690, 875), Vector2(1690, 1350), Vector2(1350, 1350), Vector2(-480, 1350)]
+		if here_zone == 3 and here.x < -380:
+			return Vector2(-480, 1100)
+		return forward[here_zone]
+	if here_zone > target_zone:
+		var backward: Array[Vector2] = [Vector2(1370, 875), Vector2(1690, 875), Vector2(1690, 1350), Vector2(-480, 1350)]
+		return backward[here_zone - 1]
+	return destination
+
+func _board_zone(point: Vector2) -> int:
+	if point.x < -168 and point.y < 1233:
+		return 4
+	if point.y >= 1233 and point.x < 1505:
+		return 3
+	if point.y >= 1130:
+		return 2
+	if point.x >= 1505:
+		return 1
+	return 0

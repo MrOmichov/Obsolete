@@ -1,5 +1,19 @@
 [gd_scene format=3 uid="uid://0ns6m2mqjrds"]
 
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_01.png" id="mentor_28_hyw77"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_02.png" id="mentor_29_i841g"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_03.png" id="mentor_30_c5y3h"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_04.png" id="mentor_31_d84qh"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_05.png" id="mentor_32_nht5p"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_06.png" id="mentor_33_i7tdb"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_01.png" id="mentor_34_f7bt2"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_02.png" id="mentor_35_qbppm"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_03.png" id="mentor_36_i65jc"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_04.png" id="mentor_37_gh54d"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_05.png" id="mentor_38_fexi2"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_06.png" id="mentor_39_2qiaf"]
+[ext_resource type="Texture2D" path="res://assets/world/hard_drive/row_02/panel_04.png" id="restored_4_ebfw2"]
+[ext_resource type="Texture2D" path="res://assets/characters/npc/floppy_disk/idle/frame_01.png" id="restored_6_wi5h4"]
 [ext_resource type="Script" uid="uid://bpsvyp2cx0827" path="res://scripts/prototype.gd" id="1"]
 [ext_resource type="Script" uid="uid://nw5kxm2sp313" path="res://scripts/day_night_manager.gd" id="2"]
 [ext_resource type="Script" uid="uid://b37emmdshe2el" path="res://scripts/world_light_controller.gd" id="3"]
@@ -96,6 +110,81 @@
 [ext_resource type="Texture2D" uid="uid://33t0hrvm2m11" path="res://assets/world/power_supply/row_03/panel_01.png" id="66_cnc3x"]
 [ext_resource type="Texture2D" uid="uid://cgw4dtwdrpkrj" path="res://assets/world/cooling_system/row_03/panel_06.png" id="67_ulcrq"]
 [ext_resource type="Texture2D" uid="uid://dgqfnsqdxtb0o" path="res://assets/world/cooling_system/row_03/panel_05.png" id="68_pfmi2"]
+
+[sub_resource type="SpriteFrames" id="mentor_SpriteFrames_65gnt"]
+animations = [{
+"frames": [],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("mentor_28_hyw77")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_29_i841g")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_30_c5y3h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_31_d84qh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_32_nht5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_33_i7tdb")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 6.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("mentor_34_f7bt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_35_qbppm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_36_i65jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_37_gh54d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_38_fexi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("mentor_39_2qiaf")
+}],
+"loop": false,
+"name": &"interact",
+"speed": 6.0
+}]
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_73pnq"]
+size = Vector2(1480, 26)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_qjmpd"]
+size = Vector2(1480, 26)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_7uyd6"]
+size = Vector2(26, 800)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_aj1dm"]
+size = Vector2(26, 800)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_eweer"]
+size = Vector2(32, 300)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_6qq8q"]
+size = Vector2(32, 280)
+
+[sub_resource type="RectangleShape2D" id="restored_RectangleShape2D_fjb7w"]
+size = Vector2(28, 414)
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puajj"]
 content_margin_left = 18.0
@@ -560,7 +649,7 @@ text = "WASD / стрелки — движение    E — действие"
 layout_mode = 2
 theme_override_colors/font_color = Color(0.564706, 0.654902, 0.631373, 1)
 theme_override_font_sizes/font_size = 13
-text = "N — следующая фаза (демо)    R — новый цикл"
+text = "N — пропустить время    M — музыка    R — заново"
 
 [node name="ObjectivePanel" type="PanelContainer" parent="HUD" unique_id=55564009]
 custom_minimum_size = Vector2(430, 80)
@@ -1586,16 +1675,8 @@ script = ExtResource("8_m0jq3")
 speed = 205.0
 
 [node name="Camera2D" type="Camera2D" parent="Actors/Player" unique_id=729973599]
-position = Vector2(-423, -288)
-anchor_mode = 0
-ignore_rotation = false
-zoom = Vector2(1.5, 1.5)
-process_callback = 0
-limit_enabled = false
-limit_left = 121
-limit_top = 534
-limit_right = 394
-limit_bottom = 805
+position = Vector2(0, 0)
+zoom = Vector2(1, 1)
 position_smoothing_enabled = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Player" unique_id=673657218]
@@ -1612,12 +1693,13 @@ animation = &"idle"
 position = Vector2(216, 302)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["Системе не хватает питания. Возьми контакт и восстанови блок справа от меня.", "Почини питание, а ночью забери данные из архива за проходом. Не задерживайся в темноте."])
+npc_id = &"resistor"
 display_name = "Резистор · наставник"
 
 [node name="Visual" type="AnimatedSprite2D" parent="Actors/Resistor" unique_id=1217930588]
 position = Vector2(0, -18)
-scale = Vector2(0.29, 0.29)
-sprite_frames = SubResource("SpriteFrames_65gnt")
+scale = Vector2(0.85, 0.85)
+sprite_frames = SubResource("mentor_SpriteFrames_65gnt")
 animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Resistor" unique_id=1408740853]
@@ -1652,7 +1734,7 @@ theme_override_font_sizes/font_size = 13
 text = "Резистор · наставник"
 
 [node name="Diode" type="StaticBody2D" parent="Actors" unique_id=1014610460 groups=["prototype_npcs"]]
-position = Vector2(655, 535)
+position = Vector2(1780, 900)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["Проход на восток откроется после ремонта питания.", "Архив отдаёт данные только ночью. С ними восстанови терминал охлаждения. Твоё место внизу слева защищает от помех."])
 npc_id = &"diode"
@@ -1698,7 +1780,7 @@ theme_override_font_sizes/font_size = 13
 text = "Диод · проводник"
 
 [node name="Microchip" type="StaticBody2D" parent="Actors" unique_id=2131131829 groups=["prototype_npcs"]]
-position = Vector2(1150, 435)
+position = Vector2(2360, 1130)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["В архиве сохранился адрес твоей ячейки.", "Восстанови терминал и вернись на своё место до рассвета. Ночью двигайся: помехи чувствуют остановки."])
 npc_id = &"microchip"
@@ -1791,7 +1873,7 @@ theme_override_font_sizes/font_size = 13
 text = "БЛОК ПИТАНИЯ"
 
 [node name="CoolingTerminal" type="StaticBody2D" parent="Actors" unique_id=1510875744]
-position = Vector2(1220, 705)
+position = Vector2(-480, 970)
 script = ExtResource("64_jgvlb")
 texture_working = ExtResource("67_ulcrq")
 texture_broken = ExtResource("68_pfmi2")
@@ -1835,7 +1917,7 @@ theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
 theme_override_font_sizes/font_size = 13
-text = "ТЕРМИНАЛ ОХЛАЖДЕНИЯ"
+text = "ЗАПАДНЫЙ ТЕРМИНАЛ"
 
 [node name="Threat" type="Node2D" parent="." unique_id=1066248648]
 
@@ -1845,4 +1927,175 @@ width = 2.0
 default_color = Color(0.9, 0.4, 0.2, 0.3)
 
 [node name="ThreatSpawn" type="Marker2D" parent="." unique_id=863468856]
-position = Vector2(1460, 800)
+position = Vector2(2700, 1370)
+
+[node name="Gate" type="StaticBody2D" parent="Board/Walls"]
+position = Vector2(1505, 863)
+
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/Gate"]
+shape = SubResource("restored_RectangleShape2D_fjb7w")
+
+
+[node name="Status" type="Label" parent="Board/Walls/Gate"]
+modulate = Color(0.905882, 0.721569, 0.419608, 1)
+offset_left = -120.0
+offset_top = -110.0
+offset_right = 33.0
+offset_bottom = -71.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
+theme_override_constants/outline_size = 4
+text = "ПИТАНИЕ ОТКЛЮЧЕНО"
+
+
+[node name="ClosedBeam" type="Line2D" parent="Board/Walls/Gate"]
+points = PackedVector2Array(0, -207, 0, 207)
+width = 7.0
+default_color = Color(0.905882, 0.721569, 0.419608, 1)
+
+
+[node name="OpenSignal" type="Line2D" parent="Board/Walls/Gate"]
+visible = false
+points = PackedVector2Array(-45, 0, 45, 0)
+width = 3.0
+default_color = Color(0.501961, 0.835294, 0.768627, 0.55)
+
+
+[node name="Labels" type="Node2D" parent="Board"]
+
+
+[node name="ServiceSector" type="Label" parent="Board/Labels"]
+offset_left = 130.0
+offset_top = 145.0
+offset_right = 304.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
+theme_override_constants/outline_size = 4
+text = "01 / СЕРВИСНЫЙ УЧАСТОК"
+
+
+[node name="ArchiveSector" type="Label" parent="Board/Labels"]
+offset_left = 1010.0
+offset_top = 145.0
+offset_right = 1141.0
+offset_bottom = 184.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
+theme_override_constants/outline_size = 4
+text = "02 / АРХИВ ПАМЯТИ"
+
+
+[node name="Archive" type="Marker2D" parent="Board"]
+position = Vector2(2440, 900)
+
+
+[node name="Status" type="Label" parent="Board/Archive"]
+offset_left = -135.0
+offset_top = 90.0
+offset_right = 66.0
+offset_bottom = 129.0
+theme_override_font_sizes/font_size = 13
+theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
+theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
+theme_override_constants/outline_size = 4
+text = "АРХИВ НЕДОСТУПЕН ДО НОЧИ"
+
+
+[node name="DataPickup" type="Sprite2D" parent="Board/Archive"]
+visible = false
+position = Vector2(0, -10)
+scale = Vector2(0.42, 0.42)
+texture = ExtResource("restored_6_wi5h4")
+
+
+[node name="ArchiveDrive" type="Sprite2D" parent="Board/Archive"]
+scale = Vector2(1.34328, 1.04839)
+texture = ExtResource("restored_4_ebfw2")
+
+
+[node name="Music" type="AudioStreamPlayer" parent="."]
+volume_db = -24.0
+
+[node name="Ending" type="PanelContainer" parent="HUD"]
+visible = false
+offset_left = 240.0
+offset_top = 220.0
+offset_right = 1040.0
+offset_bottom = 555.0
+theme_override_styles/panel = SubResource("StyleBoxFlat_s2n85")
+
+[node name="Content" type="VBoxContainer" parent="HUD/Ending"]
+layout_mode = 2
+theme_override_constants/separation = 24
+
+[node name="Title" type="Label" parent="HUD/Ending/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 30
+text = "ГЛАВА 1 · ПЕРВЫЙ РАССВЕТ"
+horizontal_alignment = 1
+
+[node name="Story" type="Label" parent="HUD/Ending/Content"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 20
+text = "Питание восстановлено. Архив спасён. Ячейка отвечает.
+Ты пережил первую ночь и вернулся на своё место.
+
+Но в журнале осталась чужая команда: «ЗАМЕНИТЬ».
+Утром ты покажешь её диспетчеру.
+
+Материнская плата · локация завершена"
+horizontal_alignment = 1
+autowrap_mode = 3
+
+[node name="Restart" type="Button" parent="HUD/Ending/Content"]
+layout_mode = 2
+text = "Пройти ещё раз · R"
+
+[node name="Perimeter" type="StaticBody2D" parent="Board/Walls"]
+
+[node name="Edge0" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(0.0, 8.0, 1505.0, 8.0, 1505.0, -8.0, 0.0, -8.0)
+
+[node name="Edge1" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(1497.0, 0.0, 1497.0, 656.0, 1513.0, 656.0, 1513.0, 0.0)
+
+[node name="Edge2" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(1505.0, 664.0, 2785.0, 664.0, 2785.0, 648.0, 1505.0, 648.0)
+
+[node name="Edge3" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(2777.0, 656.0, 2777.0, 1478.0, 2793.0, 1478.0, 2793.0, 656.0)
+
+[node name="Edge4" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(2785.0, 1470.0, -793.0, 1470.0, -793.0, 1486.0, 2785.0, 1486.0)
+
+[node name="Edge5" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(-785.0, 1478.0, -785.0, 739.0, -801.0, 739.0, -801.0, 1478.0)
+
+[node name="Edge6" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(-793.0, 747.0, -168.0, 747.0, -168.0, 731.0, -793.0, 731.0)
+
+[node name="Edge7" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(-176.0, 739.0, -176.0, 1233.0, -160.0, 1233.0, -160.0, 739.0)
+
+[node name="Edge8" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(-168.0, 1241.0, 1505.0, 1241.0, 1505.0, 1225.0, -168.0, 1225.0)
+
+[node name="Edge9" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(1513.0, 1233.0, 1513.0, 1070.0, 1497.0, 1070.0, 1497.0, 1233.0)
+
+[node name="Edge10" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(1505.0, 1062.0, 0.0, 1062.0, 0.0, 1078.0, 1505.0, 1078.0)
+
+[node name="Edge11" type="CollisionPolygon2D" parent="Board/Walls/Perimeter"]
+polygon = PackedVector2Array(8.0, 1070.0, 8.0, 0.0, -8.0, 0.0, -8.0, 1070.0)
+
+[node name="Outline" type="Line2D" parent="Board/Walls/Perimeter"]
+width = 5.0
+default_color = Color(0.3, 0.5, 0.44, 0.7)
+closed = true
+points = PackedVector2Array(0, 0, 1505, 0, 1505, 656, 2785, 656, 2785, 1478, -793, 1478, -793, 739, -168, 739, -168, 1233, 1505, 1233, 1505, 1070, 0, 1070)
