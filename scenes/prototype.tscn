@@ -1,73 +1,101 @@
-[gd_scene load_steps=93 format=3]
+[gd_scene format=3 uid="uid://0ns6m2mqjrds"]
 
-[ext_resource type="Script" path="res://scripts/prototype.gd" id="1"]
-[ext_resource type="Script" path="res://scripts/day_night_manager.gd" id="2"]
-[ext_resource type="Script" path="res://scripts/world_light_controller.gd" id="3"]
-[ext_resource type="Texture2D" path="res://assets/world/hard_drive/row_02/panel_04.png" id="4_ebfw2"]
-[ext_resource type="Texture2D" path="res://assets/world/floppy_drive/row_02/panel_01.png" id="5_nnemg"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/floppy_disk/idle/frame_01.png" id="6_wi5h4"]
-[ext_resource type="Texture2D" path="res://assets/world/motherboard/row_01/panel_01.png" id="7_h6s5f"]
-[ext_resource type="Script" path="res://scripts/Player.gd" id="8_m0jq3"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_01.png" id="9_lq0iu"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_02.png" id="10_mwrwg"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_03.png" id="11_n6euu"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_04.png" id="12_mak5c"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_05.png" id="13_0v17j"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/idle/frame_06.png" id="14_qgfs6"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_01.png" id="15_yvksq"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_02.png" id="16_2q4lm"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_03.png" id="17_ya41p"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_04.png" id="18_yvlrx"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_05.png" id="19_pwoqs"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/interact/frame_06.png" id="20_s78mi"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_01.png" id="21_sgf57"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_02.png" id="22_1u28d"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_03.png" id="23_3lugm"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_04.png" id="24_jfjrc"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_05.png" id="25_dw8do"]
-[ext_resource type="Texture2D" path="res://assets/characters/player/run/frame_06.png" id="26_nl5qv"]
-[ext_resource type="Script" path="res://scripts/Npc.gd" id="27_lvgce"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_01.png" id="28_hyw77"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_02.png" id="29_i841g"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_03.png" id="30_c5y3h"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_04.png" id="31_d84qh"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_05.png" id="32_nht5p"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/idle/frame_06.png" id="33_i7tdb"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_01.png" id="34_f7bt2"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_02.png" id="35_qbppm"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_03.png" id="36_i65jc"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_04.png" id="37_gh54d"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_05.png" id="38_fexi2"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/resistor/interact/frame_06.png" id="39_2qiaf"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_01.png" id="40_dtnjp"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_02.png" id="41_78rjc"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_03.png" id="42_c6ad2"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_04.png" id="43_e0j4e"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_05.png" id="44_l7uax"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/idle/frame_06.png" id="45_2vboa"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_01.png" id="46_yi241"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_02.png" id="47_y213p"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_03.png" id="48_md1xy"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_04.png" id="49_bjc5q"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_05.png" id="50_h5fse"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/diode/interact/frame_06.png" id="51_8qpgk"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_01.png" id="52_hcrkf"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_02.png" id="53_w2s6r"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_03.png" id="54_tevmt"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_04.png" id="55_njgd2"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_05.png" id="56_yavhd"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/idle/frame_06.png" id="57_nrg64"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_01.png" id="58_jnxa6"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_02.png" id="59_0mblu"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_03.png" id="60_bdc5i"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_04.png" id="61_ji700"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_05.png" id="62_6igmx"]
-[ext_resource type="Texture2D" path="res://assets/characters/npc/microchip/interact/frame_06.png" id="63_8uhjb"]
-[ext_resource type="Script" path="res://scripts/object.gd" id="64_jgvlb"]
-[ext_resource type="Texture2D" path="res://assets/world/power_supply/row_03/panel_02.png" id="65_2lmj4"]
-[ext_resource type="Texture2D" path="res://assets/world/power_supply/row_03/panel_01.png" id="66_cnc3x"]
-[ext_resource type="Texture2D" path="res://assets/world/cooling_system/row_03/panel_06.png" id="67_ulcrq"]
-[ext_resource type="Texture2D" path="res://assets/world/cooling_system/row_03/panel_05.png" id="68_pfmi2"]
+[ext_resource type="Script" uid="uid://bpsvyp2cx0827" path="res://scripts/prototype.gd" id="1"]
+[ext_resource type="Script" uid="uid://nw5kxm2sp313" path="res://scripts/day_night_manager.gd" id="2"]
+[ext_resource type="Script" uid="uid://b37emmdshe2el" path="res://scripts/world_light_controller.gd" id="3"]
+[ext_resource type="Texture2D" uid="uid://ckxxfucfoitam" path="res://assets/world/motherboard/custom/ezgif-82363e0b326cad5b.png" id="4_8xpqn"]
+[ext_resource type="Texture2D" uid="uid://d2u27ddsca68a" path="res://assets/world/motherboard/custom/download(11).png" id="4_h1nhs"]
+[ext_resource type="Texture2D" uid="uid://c22h3t56ammbc" path="res://assets/world/motherboard/custom/ezgif-8a85546aa56d247f.png" id="5_ku5ca"]
+[ext_resource type="Texture2D" uid="uid://difo2r0dy46yi" path="res://assets/world/motherboard/custom/ezgif-8388b947f02d1fe3.png" id="6_ebfw2"]
+[ext_resource type="Texture2D" uid="uid://beorjjc13blkv" path="res://assets/world/motherboard/row_02/panel_04.png" id="8_lvgce"]
+[ext_resource type="Script" uid="uid://cnx3immd8qcdm" path="res://scripts/Player.gd" id="8_m0jq3"]
+[ext_resource type="Texture2D" uid="uid://6dwfhdw86lny" path="res://assets/world/motherboard/custom/Gemini_Generated_Image_10sws110sws110sw(5).png" id="8_nht5p"]
+[ext_resource type="Texture2D" uid="uid://b15l64wpychk8" path="res://assets/world/motherboard/row_02/panel_06.png" id="9_hyw77"]
+[ext_resource type="Texture2D" uid="uid://bads7ay4sn4ca" path="res://assets/characters/player/idle/frame_01.png" id="9_lq0iu"]
+[ext_resource type="Texture2D" uid="uid://bnkk8gbfnkxyt" path="res://assets/world/cooling_system/row_02/panel_03.png" id="10_i841g"]
+[ext_resource type="Texture2D" uid="uid://31je6pgwk5fx" path="res://assets/characters/player/idle/frame_02.png" id="10_mwrwg"]
+[ext_resource type="Texture2D" uid="uid://c1iri0q11hd8" path="res://assets/world/hard_drive/row_02/panel_04.png" id="11_c5y3h"]
+[ext_resource type="Texture2D" uid="uid://bxtd5yfocrcy0" path="res://assets/characters/player/idle/frame_03.png" id="11_n6euu"]
+[ext_resource type="Texture2D" uid="uid://r2a64t40q32o" path="res://assets/world/hard_drive/row_02/panel_03.png" id="12_d84qh"]
+[ext_resource type="Texture2D" uid="uid://ds5e3jdj5i1ju" path="res://assets/characters/player/idle/frame_04.png" id="12_mak5c"]
+[ext_resource type="Texture2D" uid="uid://dy52llorqtthb" path="res://assets/characters/player/idle/frame_05.png" id="13_0v17j"]
+[ext_resource type="Texture2D" uid="uid://10slt4ysqws8" path="res://assets/world/motherboard/Lamps/piece_0_0.png" id="14_nht5p"]
+[ext_resource type="Texture2D" uid="uid://d3ri06baa7cxa" path="res://assets/characters/player/idle/frame_06.png" id="14_qgfs6"]
+[ext_resource type="Texture2D" uid="uid://dgmffeunyxr6d" path="res://assets/world/motherboard/custom/Gemini_Generated_Image_10sws110sws110sw(2).png" id="15_f7bt2"]
+[ext_resource type="Texture2D" uid="uid://c3xekmorjpdvc" path="res://assets/world/motherboard/Lamps/piece_0_1.png" id="15_i7tdb"]
+[ext_resource type="Texture2D" uid="uid://csik66li4e50x" path="res://assets/characters/player/interact/frame_01.png" id="15_yvksq"]
+[ext_resource type="Texture2D" uid="uid://cx2a8wbug6xe5" path="res://assets/characters/player/interact/frame_02.png" id="16_2q4lm"]
+[ext_resource type="Texture2D" uid="uid://cdtk8w1x1v1lq" path="res://assets/world/motherboard/Lamps/piece_0_2.png" id="16_f7bt2"]
+[ext_resource type="Texture2D" uid="uid://dqi8tuohlq3ua" path="res://assets/world/motherboard/custom/Gemini_Generated_Image_10sws110sws110sw(3).png" id="16_qbppm"]
+[ext_resource type="Texture2D" uid="uid://1mj0nte77hu1" path="res://assets/world/motherboard/custom/Gemini_Generated_Image_10sws110sws110sw(4).png" id="17_i65jc"]
+[ext_resource type="Texture2D" uid="uid://bh7twr0arrxxr" path="res://assets/world/motherboard/Lamps/piece_0_3.png" id="17_qbppm"]
+[ext_resource type="Texture2D" uid="uid://df2x8usir7cu7" path="res://assets/characters/player/interact/frame_03.png" id="17_ya41p"]
+[ext_resource type="Texture2D" uid="uid://cjjs74bgba5et" path="res://assets/world/motherboard/custom/Gemini_Generated_Image_10sws110sws110sw(6).png" id="18_gh54d"]
+[ext_resource type="Texture2D" uid="uid://cbou3ds3i2qxm" path="res://assets/world/motherboard/Lamps/piece_0_4.png" id="18_i65jc"]
+[ext_resource type="Texture2D" uid="uid://b6uepjbg2rujt" path="res://assets/characters/player/interact/frame_04.png" id="18_yvlrx"]
+[ext_resource type="Texture2D" uid="uid://dma7sqemg8bv5" path="res://assets/world/motherboard/Lamps/piece_0_5.png" id="19_gh54d"]
+[ext_resource type="Texture2D" uid="uid://7s4g2gdfalk0" path="res://assets/characters/player/interact/frame_05.png" id="19_pwoqs"]
+[ext_resource type="Texture2D" uid="uid://bmrt5k18sr5n0" path="res://assets/world/motherboard/Lamps/piece_1_1.png" id="20_fexi2"]
+[ext_resource type="Texture2D" uid="uid://cgc8lj8brdwhw" path="res://assets/characters/player/interact/frame_06.png" id="20_s78mi"]
+[ext_resource type="Texture2D" uid="uid://dqsdwvcrtjibl" path="res://assets/world/motherboard/Lamps/piece_1_2.png" id="21_2qiaf"]
+[ext_resource type="Texture2D" uid="uid://8r71gchp4i5o" path="res://assets/characters/player/run/frame_01.png" id="21_sgf57"]
+[ext_resource type="Texture2D" uid="uid://bbngvn70ns4aq" path="res://assets/characters/player/run/frame_02.png" id="22_1u28d"]
+[ext_resource type="Texture2D" uid="uid://c0y0ihxhut53h" path="res://assets/world/motherboard/Lamps/piece_1_3.png" id="22_dtnjp"]
+[ext_resource type="Texture2D" uid="uid://ceg7ggtar63jk" path="res://assets/characters/player/run/frame_03.png" id="23_3lugm"]
+[ext_resource type="Texture2D" uid="uid://ihitrkemmje4" path="res://assets/world/motherboard/Lamps/piece_1_4.png" id="23_78rjc"]
+[ext_resource type="Texture2D" uid="uid://xy8xqbb76fvx" path="res://assets/world/motherboard/Lamps/piece_1_5.png" id="24_c6ad2"]
+[ext_resource type="Texture2D" uid="uid://bjxjkdc5f4mn8" path="res://assets/characters/player/run/frame_04.png" id="24_jfjrc"]
+[ext_resource type="Texture2D" uid="uid://xmuhk4pc5d5y" path="res://assets/characters/player/run/frame_05.png" id="25_dw8do"]
+[ext_resource type="Texture2D" uid="uid://cylpr3etikj3p" path="res://assets/world/motherboard/Lamps/piece_2_1.png" id="25_e0j4e"]
+[ext_resource type="Texture2D" uid="uid://bxeotvgetcfph" path="res://assets/world/motherboard/Lamps/piece_2_2.png" id="26_l7uax"]
+[ext_resource type="Texture2D" uid="uid://fps86msrxsab" path="res://assets/characters/player/run/frame_06.png" id="26_nl5qv"]
+[ext_resource type="Texture2D" uid="uid://d10gqybjqpuyo" path="res://assets/world/motherboard/Lamps/piece_2_3.png" id="27_2vboa"]
+[ext_resource type="Script" uid="uid://dpo4pt7nhjtfg" path="res://scripts/Npc.gd" id="27_lvgce"]
+[ext_resource type="Texture2D" uid="uid://dvhl6n21jl8ll" path="res://assets/characters/npc/resistor/idle/frame_01.png" id="28_hyw77"]
+[ext_resource type="Texture2D" uid="uid://o1owbfpb510n" path="res://assets/world/motherboard/Lamps/piece_2_4.png" id="28_yi241"]
+[ext_resource type="Texture2D" uid="uid://405vn1nx3kv5" path="res://assets/world/motherboard/Lamps/piece_2_5.png" id="29_y213p"]
+[ext_resource type="Texture2D" uid="uid://cgfmjhxiqei6p" path="res://assets/world/motherboard/Walls/piece_0_0.png" id="30_md1xy"]
+[ext_resource type="Texture2D" uid="uid://tcmganpc336r" path="res://assets/world/motherboard/Walls/piece_2_3.png" id="31_bjc5q"]
+[ext_resource type="Texture2D" uid="uid://bkt306tbjxwah" path="res://assets/characters/npc/resistor/idle/frame_04.png" id="31_d84qh"]
+[ext_resource type="Texture2D" uid="uid://d2ooj14ifq3n8" path="res://assets/world/motherboard/Walls/piece_0_5.png" id="32_h5fse"]
+[ext_resource type="Texture2D" uid="uid://cx1qjj8p5s1yp" path="res://assets/world/motherboard/Walls/piece_2_2.png" id="33_8qpgk"]
+[ext_resource type="Texture2D" uid="uid://bvoojr3ixrvw" path="res://assets/characters/npc/resistor/idle/frame_06.png" id="33_i7tdb"]
+[ext_resource type="Texture2D" uid="uid://cdjo2eol3j4aw" path="res://assets/characters/npc/resistor/interact/frame_01.png" id="34_f7bt2"]
+[ext_resource type="Texture2D" uid="uid://csrythlhlbct4" path="res://assets/world/motherboard/Walls/piece_3_5 — копия.png" id="34_hcrkf"]
+[ext_resource type="Texture2D" uid="uid://c0tkr4vir5uqu" path="res://assets/characters/npc/resistor/interact/frame_02.png" id="35_qbppm"]
+[ext_resource type="Texture2D" uid="uid://dim07rkuvjanw" path="res://assets/characters/npc/resistor/interact/frame_03.png" id="36_i65jc"]
+[ext_resource type="Texture2D" uid="uid://bh7tvfr8b2bow" path="res://assets/characters/npc/resistor/interact/frame_04.png" id="37_gh54d"]
+[ext_resource type="Texture2D" uid="uid://c71l7xdtjjsew" path="res://assets/characters/npc/resistor/interact/frame_05.png" id="38_fexi2"]
+[ext_resource type="Texture2D" uid="uid://c0nfolwlhn58n" path="res://assets/characters/npc/resistor/interact/frame_06.png" id="39_2qiaf"]
+[ext_resource type="Texture2D" uid="uid://do8ix88d65jbb" path="res://assets/characters/npc/diode/idle/frame_01.png" id="40_dtnjp"]
+[ext_resource type="Texture2D" uid="uid://cfg46b1kosu06" path="res://assets/characters/npc/diode/idle/frame_02.png" id="41_78rjc"]
+[ext_resource type="Texture2D" uid="uid://df5thlxeg518o" path="res://assets/characters/npc/diode/idle/frame_03.png" id="42_c6ad2"]
+[ext_resource type="Texture2D" uid="uid://brnit7yq1sr1h" path="res://assets/characters/npc/diode/idle/frame_04.png" id="43_e0j4e"]
+[ext_resource type="Texture2D" uid="uid://d0spm4x7hw8qq" path="res://assets/characters/npc/diode/idle/frame_05.png" id="44_l7uax"]
+[ext_resource type="Texture2D" uid="uid://cklgx7qsm6hde" path="res://assets/characters/npc/diode/idle/frame_06.png" id="45_2vboa"]
+[ext_resource type="Texture2D" uid="uid://8205apispsq0" path="res://assets/characters/npc/diode/interact/frame_01.png" id="46_yi241"]
+[ext_resource type="Texture2D" uid="uid://b3lgn0ri2s6yo" path="res://assets/characters/npc/diode/interact/frame_02.png" id="47_y213p"]
+[ext_resource type="Texture2D" uid="uid://l2nj02wtepqd" path="res://assets/characters/npc/diode/interact/frame_03.png" id="48_md1xy"]
+[ext_resource type="Texture2D" uid="uid://c5ivaqwruq36e" path="res://assets/characters/npc/diode/interact/frame_04.png" id="49_bjc5q"]
+[ext_resource type="Texture2D" uid="uid://bp4paoen7xymh" path="res://assets/characters/npc/diode/interact/frame_05.png" id="50_h5fse"]
+[ext_resource type="Texture2D" uid="uid://57af1kiks7qs" path="res://assets/characters/npc/diode/interact/frame_06.png" id="51_8qpgk"]
+[ext_resource type="Texture2D" uid="uid://csi7ddudiekpg" path="res://assets/characters/npc/microchip/idle/frame_01.png" id="52_hcrkf"]
+[ext_resource type="Texture2D" uid="uid://wr5cfcoleth1" path="res://assets/characters/npc/microchip/idle/frame_02.png" id="53_w2s6r"]
+[ext_resource type="Texture2D" uid="uid://ddm1l22nwi50h" path="res://assets/characters/npc/microchip/idle/frame_03.png" id="54_tevmt"]
+[ext_resource type="Texture2D" uid="uid://i2crx0hrk3w7" path="res://assets/characters/npc/microchip/idle/frame_04.png" id="55_njgd2"]
+[ext_resource type="Texture2D" uid="uid://bh7um70621pan" path="res://assets/characters/npc/microchip/idle/frame_05.png" id="56_yavhd"]
+[ext_resource type="Texture2D" uid="uid://bs5bbodtug467" path="res://assets/characters/npc/microchip/idle/frame_06.png" id="57_nrg64"]
+[ext_resource type="Texture2D" uid="uid://c6mftsvotrj0" path="res://assets/characters/npc/microchip/interact/frame_01.png" id="58_jnxa6"]
+[ext_resource type="Texture2D" uid="uid://dddgsy0ieeusy" path="res://assets/characters/npc/microchip/interact/frame_02.png" id="59_0mblu"]
+[ext_resource type="Texture2D" uid="uid://b5jw6mpn72y22" path="res://assets/characters/npc/microchip/interact/frame_03.png" id="60_bdc5i"]
+[ext_resource type="Texture2D" uid="uid://dyc04bk4e334m" path="res://assets/characters/npc/microchip/interact/frame_04.png" id="61_ji700"]
+[ext_resource type="Texture2D" uid="uid://ce8f604abmfbn" path="res://assets/characters/npc/microchip/interact/frame_05.png" id="62_6igmx"]
+[ext_resource type="Texture2D" uid="uid://d0kkkog1hka8n" path="res://assets/characters/npc/microchip/interact/frame_06.png" id="63_8uhjb"]
+[ext_resource type="Script" uid="uid://cg2h4hgkci2ud" path="res://scripts/object.gd" id="64_jgvlb"]
+[ext_resource type="Texture2D" uid="uid://c5qvipqt0q5y" path="res://assets/world/power_supply/row_03/panel_02.png" id="65_2lmj4"]
+[ext_resource type="Texture2D" uid="uid://33t0hrvm2m11" path="res://assets/world/power_supply/row_03/panel_01.png" id="66_cnc3x"]
+[ext_resource type="Texture2D" uid="uid://cgw4dtwdrpkrj" path="res://assets/world/cooling_system/row_03/panel_06.png" id="67_ulcrq"]
+[ext_resource type="Texture2D" uid="uid://dgqfnsqdxtb0o" path="res://assets/world/cooling_system/row_03/panel_05.png" id="68_pfmi2"]
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_puajj"]
 content_margin_left = 18.0
@@ -133,34 +161,85 @@ corner_radius_top_right = 8
 corner_radius_bottom_right = 8
 corner_radius_bottom_left = 8
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_73pnq"]
-size = Vector2(1480, 26)
+[sub_resource type="SpriteFrames" id="SpriteFrames_6pxar"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("14_nht5p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_i7tdb")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_f7bt2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("17_qbppm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("18_i65jc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("19_gh54d")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 3.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_qjmpd"]
-size = Vector2(1480, 26)
+[sub_resource type="SpriteFrames" id="SpriteFrames_315sa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("20_fexi2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("21_2qiaf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("22_dtnjp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("23_78rjc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("24_c6ad2")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_7uyd6"]
-size = Vector2(26, 800)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_aj1dm"]
-size = Vector2(26, 800)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_eweer"]
-size = Vector2(32, 300)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_6qq8q"]
-size = Vector2(32, 280)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_fjb7w"]
-size = Vector2(24, 200)
+[sub_resource type="SpriteFrames" id="SpriteFrames_1lkgt"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("25_e0j4e")
+}, {
+"duration": 1.0,
+"texture": ExtResource("26_l7uax")
+}, {
+"duration": 1.0,
+"texture": ExtResource("27_2vboa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("28_yi241")
+}, {
+"duration": 1.0,
+"texture": ExtResource("29_y213p")
+}],
+"loop": 1,
+"name": &"Idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_k37m4"]
-radius = 13.0
+radius = 14.56022
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_6kcos"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -183,7 +262,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("14_qgfs6")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 8.0
 }, {
@@ -206,7 +285,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("20_s78mi")
 }],
-"loop": false,
+"loop": 0,
 "name": &"interact",
 "speed": 8.0
 }, {
@@ -229,7 +308,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("26_nl5qv")
 }],
-"loop": true,
+"loop": 1,
 "name": &"run",
 "speed": 8.0
 }]
@@ -237,7 +316,7 @@ animations = [{
 [sub_resource type="SpriteFrames" id="SpriteFrames_65gnt"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -246,23 +325,14 @@ animations = [{
 "texture": ExtResource("28_hyw77")
 }, {
 "duration": 1.0,
-"texture": ExtResource("29_i841g")
-}, {
-"duration": 1.0,
-"texture": ExtResource("30_c5y3h")
-}, {
-"duration": 1.0,
 "texture": ExtResource("31_d84qh")
-}, {
-"duration": 1.0,
-"texture": ExtResource("32_nht5p")
 }, {
 "duration": 1.0,
 "texture": ExtResource("33_i7tdb")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
-"speed": 6.0
+"speed": 3.0
 }, {
 "frames": [{
 "duration": 1.0,
@@ -283,7 +353,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("39_2qiaf")
 }],
-"loop": false,
+"loop": 0,
 "name": &"interact",
 "speed": 6.0
 }]
@@ -301,7 +371,7 @@ outline_color = Color(0, 0, 0, 1)
 [sub_resource type="SpriteFrames" id="SpriteFrames_n06l4"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -324,7 +394,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("45_2vboa")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 6.0
 }, {
@@ -347,7 +417,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("51_8qpgk")
 }],
-"loop": false,
+"loop": 0,
 "name": &"interact",
 "speed": 6.0
 }]
@@ -358,7 +428,7 @@ size = Vector2(45, 28)
 [sub_resource type="SpriteFrames" id="SpriteFrames_kuwo1"]
 animations = [{
 "frames": [],
-"loop": true,
+"loop": 1,
 "name": &"default",
 "speed": 5.0
 }, {
@@ -381,7 +451,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("57_nrg64")
 }],
-"loop": true,
+"loop": 1,
 "name": &"idle",
 "speed": 6.0
 }, {
@@ -404,7 +474,7 @@ animations = [{
 "duration": 1.0,
 "texture": ExtResource("63_8uhjb")
 }],
-"loop": false,
+"loop": 0,
 "name": &"interact",
 "speed": 6.0
 }]
@@ -422,19 +492,19 @@ radius = 138.177
 outline_size = 3
 outline_color = Color(0, 0, 0, 1)
 
-[node name="Obsolete" type="Node2D" groups=["prototype"]]
+[node name="Obsolete" type="Node2D" unique_id=1595602849 groups=["prototype"]]
 script = ExtResource("1")
 
-[node name="DayNightManager" type="Node" parent="."]
+[node name="DayNightManager" type="Node" parent="." unique_id=1439089412]
 script = ExtResource("2")
 
-[node name="WorldLight" type="CanvasModulate" parent="."]
+[node name="WorldLight" type="CanvasModulate" parent="." unique_id=2123854247]
 color = Color(0.86, 0.78, 0.64, 1)
 script = ExtResource("3")
 
-[node name="HUD" type="CanvasLayer" parent="."]
+[node name="HUD" type="CanvasLayer" parent="." unique_id=1787022666]
 
-[node name="StatusPanel" type="PanelContainer" parent="HUD"]
+[node name="StatusPanel" type="PanelContainer" parent="HUD" unique_id=356800666]
 custom_minimum_size = Vector2(1236, 92)
 offset_left = 22.0
 offset_top = 18.0
@@ -442,57 +512,57 @@ offset_right = 22.0
 offset_bottom = 18.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_puajj")
 
-[node name="Columns" type="HBoxContainer" parent="HUD/StatusPanel"]
+[node name="Columns" type="HBoxContainer" parent="HUD/StatusPanel" unique_id=342639907]
 layout_mode = 2
 theme_override_constants/separation = 36
 
-[node name="Title" type="VBoxContainer" parent="HUD/StatusPanel/Columns"]
+[node name="Title" type="VBoxContainer" parent="HUD/StatusPanel/Columns" unique_id=938196613]
 layout_mode = 2
 
-[node name="Title" type="Label" parent="HUD/StatusPanel/Columns/Title"]
+[node name="Title" type="Label" parent="HUD/StatusPanel/Columns/Title" unique_id=76140517]
 layout_mode = 2
-theme_override_font_sizes/font_size = 27
 theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
+theme_override_font_sizes/font_size = 27
 text = "OBSOLETE"
 
-[node name="Subtitle" type="Label" parent="HUD/StatusPanel/Columns/Title"]
+[node name="Subtitle" type="Label" parent="HUD/StatusPanel/Columns/Title" unique_id=60417124]
 layout_mode = 2
-theme_override_font_sizes/font_size = 12
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
+theme_override_font_sizes/font_size = 12
 text = "DUSTWARE / МАТЕРИНСКАЯ ПЛАТА"
 
-[node name="Status" type="VBoxContainer" parent="HUD/StatusPanel/Columns"]
+[node name="Status" type="VBoxContainer" parent="HUD/StatusPanel/Columns" unique_id=1523043641]
 layout_mode = 2
 size_flags_horizontal = 3
 
-[node name="Phase" type="Label" parent="HUD/StatusPanel/Columns/Status"]
+[node name="Phase" type="Label" parent="HUD/StatusPanel/Columns/Status" unique_id=637158838]
 layout_mode = 2
-theme_override_font_sizes/font_size = 17
 theme_override_colors/font_color = Color(0.847059, 0.901961, 0.87451, 1)
+theme_override_font_sizes/font_size = 17
 text = "РАССВЕТ · 00:30"
 
-[node name="Inventory" type="Label" parent="HUD/StatusPanel/Columns/Status"]
+[node name="Inventory" type="Label" parent="HUD/StatusPanel/Columns/Status" unique_id=1371997705]
 layout_mode = 2
-theme_override_font_sizes/font_size = 15
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
+theme_override_font_sizes/font_size = 15
 text = "Контакты: 0    Архив: нет данных    Ремонт: 0/2"
 
-[node name="Controls" type="VBoxContainer" parent="HUD/StatusPanel/Columns"]
+[node name="Controls" type="VBoxContainer" parent="HUD/StatusPanel/Columns" unique_id=560386579]
 layout_mode = 2
 
-[node name="MovementHelp" type="Label" parent="HUD/StatusPanel/Columns/Controls"]
+[node name="MovementHelp" type="Label" parent="HUD/StatusPanel/Columns/Controls" unique_id=880520750]
 layout_mode = 2
-theme_override_font_sizes/font_size = 14
 theme_override_colors/font_color = Color(0.847059, 0.901961, 0.87451, 1)
+theme_override_font_sizes/font_size = 14
 text = "WASD / стрелки — движение    E — действие"
 
-[node name="DemoHelp" type="Label" parent="HUD/StatusPanel/Columns/Controls"]
+[node name="DemoHelp" type="Label" parent="HUD/StatusPanel/Columns/Controls" unique_id=401115274]
 layout_mode = 2
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.564706, 0.654902, 0.631373, 1)
+theme_override_font_sizes/font_size = 13
 text = "N — следующая фаза (демо)    R — новый цикл"
 
-[node name="ObjectivePanel" type="PanelContainer" parent="HUD"]
+[node name="ObjectivePanel" type="PanelContainer" parent="HUD" unique_id=55564009]
 custom_minimum_size = Vector2(430, 80)
 offset_left = 22.0
 offset_top = 124.0
@@ -500,35 +570,35 @@ offset_right = 22.0
 offset_bottom = 124.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_oupgp")
 
-[node name="Text" type="Label" parent="HUD/ObjectivePanel"]
+[node name="Text" type="Label" parent="HUD/ObjectivePanel" unique_id=1960656747]
 custom_minimum_size = Vector2(394, 0)
 layout_mode = 2
-theme_override_font_sizes/font_size = 16
 theme_override_colors/font_color = Color(0.847059, 0.901961, 0.87451, 1)
+theme_override_font_sizes/font_size = 16
 text = "01 / ПОДГОТОВКА
 Поговори с резистором у блока питания."
 autowrap_mode = 3
 
-[node name="Notice" type="Label" parent="HUD"]
+[node name="Notice" type="Label" parent="HUD" unique_id=62093710]
 custom_minimum_size = Vector2(520, 64)
 offset_left = 36.0
 offset_top = 636.0
 offset_right = 36.0
 offset_bottom = 636.0
-theme_override_font_sizes/font_size = 16
 theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
+theme_override_font_sizes/font_size = 16
 text = "Система просыпается. Найди резистора у блока питания."
 autowrap_mode = 3
 
-[node name="Danger" type="Label" parent="HUD"]
+[node name="Danger" type="Label" parent="HUD" unique_id=1366299481]
 offset_left = 760.0
 offset_top = 130.0
 offset_right = 760.0
 offset_bottom = 130.0
-theme_override_font_sizes/font_size = 18
 theme_override_colors/font_color = Color(0.94902, 0.603922, 0.490196, 1)
+theme_override_font_sizes/font_size = 18
 
-[node name="PromptPanel" type="PanelContainer" parent="HUD"]
+[node name="PromptPanel" type="PanelContainer" parent="HUD" unique_id=638989887]
 custom_minimum_size = Vector2(700, 60)
 offset_left = 290.0
 offset_top = 712.0
@@ -536,14 +606,14 @@ offset_right = 290.0
 offset_bottom = 712.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_bh6r2")
 
-[node name="Text" type="Label" parent="HUD/PromptPanel"]
+[node name="Text" type="Label" parent="HUD/PromptPanel" unique_id=865940950]
 layout_mode = 2
-theme_override_font_sizes/font_size = 17
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
+theme_override_font_sizes/font_size = 17
 text = "E — вернуться на своё место · безопасная зона"
 horizontal_alignment = 1
 
-[node name="Dialogue" type="PanelContainer" parent="HUD"]
+[node name="Dialogue" type="PanelContainer" parent="HUD" unique_id=708792156]
 visible = false
 custom_minimum_size = Vector2(920, 132)
 offset_left = 180.0
@@ -552,14 +622,14 @@ offset_right = 180.0
 offset_bottom = 568.0
 theme_override_styles/panel = SubResource("StyleBoxFlat_s2n85")
 
-[node name="Text" type="Label" parent="HUD/Dialogue"]
+[node name="Text" type="Label" parent="HUD/Dialogue" unique_id=1601815415]
 custom_minimum_size = Vector2(880, 100)
 layout_mode = 2
-theme_override_font_sizes/font_size = 19
 theme_override_colors/font_color = Color(0.847059, 0.901961, 0.87451, 1)
+theme_override_font_sizes/font_size = 19
 autowrap_mode = 3
 
-[node name="Restart" type="Button" parent="HUD"]
+[node name="Restart" type="Button" parent="HUD" unique_id=241047082]
 visible = false
 offset_left = 1010.0
 offset_top = 714.0
@@ -567,469 +637,1000 @@ offset_right = 1230.0
 offset_bottom = 770.0
 text = "Начать заново"
 
-[node name="Board" type="Node2D" parent="."]
+[node name="Board" type="Node2D" parent="." unique_id=1663769652]
 
-[node name="Walls" type="Node2D" parent="Board"]
+[node name="Fall" type="Node2D" parent="Board" unique_id=1219672044]
 
-[node name="North" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(800, 105)
+[node name="TextureRect" type="TextureRect" parent="Board/Fall" unique_id=795340334]
+offset_left = 75.0
+offset_top = 1068.0
+offset_right = 6854.9995
+offset_bottom = 1358.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_8xpqn")
+expand_mode = 1
+stretch_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/North"]
-shape = SubResource("RectangleShape2D_73pnq")
+[node name="fall_left" type="Sprite2D" parent="Board/Fall" unique_id=1571999386]
+position = Vector2(37.999996, 1094.239)
+scale = Vector2(0.20215054, 0.19285934)
+texture = ExtResource("5_ku5ca")
+region_enabled = true
+region_rect = Rect2(0, 0, 372, 319.47974)
 
-[node name="Trim" type="Line2D" parent="Board/Walls/North"]
-points = PackedVector2Array(-728, 6, 728, 6)
-width = 7.0
-default_color = Color(0.509804, 0.580392, 0.482353, 1)
+[node name="fall_left2" type="Sprite2D" parent="Board/Fall" unique_id=1763490127]
+position = Vector2(1467, 1111)
+scale = Vector2(0.2, 0.20239417)
+texture = ExtResource("6_ebfw2")
 
-[node name="South" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(800, 885)
+[node name="fall_left3" type="Sprite2D" parent="Board/Fall" unique_id=1023253394]
+position = Vector2(1468, 1196)
+scale = Vector2(0.2, 0.20239417)
+texture = ExtResource("6_ebfw2")
+flip_v = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/South"]
-shape = SubResource("RectangleShape2D_qjmpd")
+[node name="TextureRect2" type="TextureRect" parent="Board/Fall" unique_id=372094296]
+offset_left = -99.99998
+offset_top = 1181.0001
+offset_right = 7554.9995
+offset_bottom = 1471.0001
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_8xpqn")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true
 
-[node name="Trim" type="Line2D" parent="Board/Walls/South"]
-points = PackedVector2Array(-728, -6, 728, -6)
-width = 7.0
-default_color = Color(0.509804, 0.580392, 0.482353, 1)
+[node name="fall_left5" type="Sprite2D" parent="Board/Fall" unique_id=1772691023]
+position = Vector2(-134, 1196)
+scale = Vector2(0.2, 0.20239417)
+texture = ExtResource("6_ebfw2")
+flip_h = true
+flip_v = true
 
-[node name="West" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(60, 495)
+[node name="TextureRect3" type="TextureRect" parent="Board/Fall" unique_id=1875177280]
+offset_left = -119.99997
+offset_top = 1417.2002
+offset_right = 7534.9995
+offset_bottom = 1707.2002
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_8xpqn")
+expand_mode = 1
+stretch_mode = 1
+flip_v = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/West"]
-shape = SubResource("RectangleShape2D_7uyd6")
+[node name="Floor" type="Node2D" parent="Board" unique_id=289428445]
 
-[node name="Trim" type="Line2D" parent="Board/Walls/West"]
-points = PackedVector2Array(6, -384, 6, 384)
-width = 7.0
-default_color = Color(0.509804, 0.580392, 0.482353, 1)
+[node name="TextureRect" type="TextureRect" parent="Board/Floor" unique_id=1510115782]
+offset_right = 7524.9995
+offset_bottom = 5349.9995
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_h1nhs")
+stretch_mode = 1
 
-[node name="East" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(1540, 495)
+[node name="TextureRect2" type="TextureRect" parent="Board/Floor" unique_id=1130963931]
+offset_left = 1505.0
+offset_top = 656.0
+offset_right = 7904.9995
+offset_bottom = 4766.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_h1nhs")
+stretch_mode = 1
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/East"]
-shape = SubResource("RectangleShape2D_aj1dm")
+[node name="TextureRect3" type="TextureRect" parent="Board/Floor" unique_id=529843228]
+offset_left = -791.0
+offset_top = 1233.0001
+offset_right = 10693.999
+offset_bottom = 2457.9995
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_h1nhs")
+stretch_mode = 1
 
-[node name="Trim" type="Line2D" parent="Board/Walls/East"]
-points = PackedVector2Array(-6, -384, -6, 384)
-width = 7.0
-default_color = Color(0.509804, 0.580392, 0.482353, 1)
+[node name="TextureRect4" type="TextureRect" parent="Board/Floor" unique_id=1309898660]
+offset_left = -793.0
+offset_top = 739.0
+offset_right = 2331.9995
+offset_bottom = 3208.9995
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("4_h1nhs")
+stretch_mode = 1
 
-[node name="DividerNorth" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(900, 255)
+[node name="ETC" type="Node2D" parent="Board" unique_id=1404829905]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/DividerNorth"]
-shape = SubResource("RectangleShape2D_eweer")
+[node name="Sprite2D31" type="Sprite2D" parent="Board/ETC" unique_id=42843169]
+position = Vector2(-359, 812)
+scale = Vector2(0.26725662, 0.26045626)
+texture = ExtResource("8_nht5p")
 
-[node name="Housing" type="Line2D" parent="Board/Walls/DividerNorth"]
-points = PackedVector2Array(0, -135, 0, 147)
-width = 28.0
-default_color = Color(0.105882, 0.156863, 0.152941, 1)
+[node name="Sprite2D" type="Sprite2D" parent="Board/ETC" unique_id=1880973766]
+position = Vector2(1324, 98)
+texture = ExtResource("8_lvgce")
 
-[node name="Trim" type="Line2D" parent="Board/Walls/DividerNorth"]
-points = PackedVector2Array(0, -135, 0, 147)
-width = 3.0
-default_color = Color(0.200784, 0.334118, 0.307451, 1)
+[node name="Sprite2D2" type="Sprite2D" parent="Board/ETC" unique_id=1005581713]
+position = Vector2(2540, 797)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="DividerSouth" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(900, 745)
+[node name="Sprite2D3" type="Sprite2D" parent="Board/ETC" unique_id=1532127884]
+position = Vector2(2573, 796.99994)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/DividerSouth"]
-shape = SubResource("RectangleShape2D_6qq8q")
+[node name="Sprite2D4" type="Sprite2D" parent="Board/ETC" unique_id=1061392337]
+position = Vector2(2603, 796.99994)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="Housing" type="Line2D" parent="Board/Walls/DividerSouth"]
-points = PackedVector2Array(0, -137, 0, 125)
-width = 28.0
-default_color = Color(0.105882, 0.156863, 0.152941, 1)
+[node name="Sprite2D5" type="Sprite2D" parent="Board/ETC" unique_id=111991659]
+position = Vector2(2541.9998, 869)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="Trim" type="Line2D" parent="Board/Walls/DividerSouth"]
-points = PackedVector2Array(0, -137, 0, 125)
-width = 3.0
-default_color = Color(0.200784, 0.334118, 0.307451, 1)
+[node name="Sprite2D6" type="Sprite2D" parent="Board/ETC" unique_id=2058229843]
+position = Vector2(2573.9998, 869)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="Gate" type="StaticBody2D" parent="Board/Walls"]
-position = Vector2(900, 505)
+[node name="Sprite2D7" type="Sprite2D" parent="Board/ETC" unique_id=1713857401]
+position = Vector2(2604, 867.99994)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Board/Walls/Gate"]
-shape = SubResource("RectangleShape2D_fjb7w")
+[node name="Sprite2D8" type="Sprite2D" parent="Board/ETC" unique_id=265305132]
+position = Vector2(1422, 203)
+texture = ExtResource("10_i841g")
+flip_h = true
 
-[node name="Status" type="Label" parent="Board/Walls/Gate"]
-modulate = Color(0.905882, 0.721569, 0.419608, 1)
-offset_left = -120.0
-offset_top = -110.0
-offset_right = 33.0
-offset_bottom = -71.0
-theme_override_font_sizes/font_size = 13
-theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
-theme_override_constants/outline_size = 4
-text = "ПИТАНИЕ ОТКЛЮЧЕНО"
+[node name="Sprite2D9" type="Sprite2D" parent="Board/ETC" unique_id=1268231122]
+position = Vector2(1367, 331.99997)
+scale = Vector2(0.5671642, 0.5645161)
+texture = ExtResource("11_c5y3h")
 
-[node name="ClosedBeam" type="Line2D" parent="Board/Walls/Gate"]
-points = PackedVector2Array(0, -97, 0, 97)
-width = 7.0
-default_color = Color(0.905882, 0.721569, 0.419608, 1)
+[node name="Sprite2D10" type="Sprite2D" parent="Board/ETC" unique_id=340868103]
+position = Vector2(1401.0002, 380.00006)
+scale = Vector2(0.3216752, 0.31867847)
+texture = ExtResource("11_c5y3h")
 
-[node name="OpenSignal" type="Line2D" parent="Board/Walls/Gate"]
-visible = false
-points = PackedVector2Array(-45, 0, 45, 0)
-width = 3.0
-default_color = Color(0.501961, 0.835294, 0.768627, 0.55)
+[node name="Sprite2D11" type="Sprite2D" parent="Board/ETC" unique_id=894613967]
+position = Vector2(1336, 404)
+scale = Vector2(0.3216752, 0.31867847)
+texture = ExtResource("11_c5y3h")
 
-[node name="Labels" type="Node2D" parent="Board"]
+[node name="Sprite2D12" type="Sprite2D" parent="Board/ETC" unique_id=1418617217]
+position = Vector2(2599, 1275)
+scale = Vector2(0.78731304, 0.673386)
+texture = ExtResource("12_d84qh")
 
-[node name="ServiceSector" type="Label" parent="Board/Labels"]
-offset_left = 130.0
-offset_top = 145.0
-offset_right = 304.0
-offset_bottom = 184.0
-theme_override_font_sizes/font_size = 13
-theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
-theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
-theme_override_constants/outline_size = 4
-text = "01 / СЕРВИСНЫЙ УЧАСТОК"
+[node name="Sprite2D13" type="Sprite2D" parent="Board/ETC" unique_id=1078383690]
+position = Vector2(717, 1007)
+texture = ExtResource("68_pfmi2")
 
-[node name="ArchiveSector" type="Label" parent="Board/Labels"]
-offset_left = 1010.0
-offset_top = 145.0
-offset_right = 1141.0
-offset_bottom = 184.0
-theme_override_font_sizes/font_size = 13
-theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
-theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
-theme_override_constants/outline_size = 4
-text = "02 / АРХИВ ПАМЯТИ"
+[node name="Sprite2D14" type="Sprite2D" parent="Board/ETC" unique_id=1862907102]
+position = Vector2(820, 1007)
+texture = ExtResource("68_pfmi2")
 
-[node name="Props" type="Node2D" parent="Board"]
+[node name="Sprite2D15" type="Sprite2D" parent="Board/ETC" unique_id=1852228628]
+position = Vector2(921, 1008)
+texture = ExtResource("68_pfmi2")
 
-[node name="FloppyDrive" type="Sprite2D" parent="Board/Props"]
-position = Vector2(620, 745)
-scale = Vector2(1.34921, 0.887097)
-texture = ExtResource("5_nnemg")
+[node name="Sprite2D16" type="Sprite2D" parent="Board/ETC" unique_id=1745719164]
+position = Vector2(687, 590)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
 
-[node name="Traces" type="Node2D" parent="Board"]
+[node name="Sprite2D17" type="Sprite2D" parent="Board/ETC" unique_id=1007174566]
+position = Vector2(455, 514.00006)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
+
+[node name="Sprite2D18" type="Sprite2D" parent="Board/ETC" unique_id=1534686195]
+position = Vector2(719, 231.00006)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
+
+[node name="Sprite2D19" type="Sprite2D" parent="Board/ETC" unique_id=594392496]
+position = Vector2(1071.0001, 349)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
+
+[node name="Sprite2D20" type="Sprite2D" parent="Board/ETC" unique_id=800289441]
+position = Vector2(1775, 907)
+scale = Vector2(0.31984472, 0.3220464)
+texture = ExtResource("16_qbppm")
+
+[node name="Sprite2D21" type="Sprite2D" parent="Board/ETC" unique_id=914142554]
+position = Vector2(171, 994)
+scale = Vector2(0.31984472, 0.3220464)
+texture = ExtResource("16_qbppm")
+
+[node name="Sprite2D22" type="Sprite2D" parent="Board/ETC" unique_id=724493950]
+position = Vector2(-637, 1345)
+scale = Vector2(0.31984472, 0.3220464)
+texture = ExtResource("16_qbppm")
+
+[node name="Sprite2D23" type="Sprite2D" parent="Board/ETC" unique_id=641274721]
+position = Vector2(181.5, 522.625)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D24" type="Sprite2D" parent="Board/ETC" unique_id=292696526]
+position = Vector2(207, 529)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D25" type="Sprite2D" parent="Board/ETC" unique_id=1581724603]
+position = Vector2(233.5, 533.625)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D26" type="Sprite2D" parent="Board/ETC" unique_id=1416744915]
+position = Vector2(259, 540)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D27" type="Sprite2D" parent="Board/ETC" unique_id=342176157]
+position = Vector2(184.5, 471.625)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D28" type="Sprite2D" parent="Board/ETC" unique_id=1498016557]
+position = Vector2(210, 478)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D29" type="Sprite2D" parent="Board/ETC" unique_id=116686789]
+position = Vector2(236.5, 482.625)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D30" type="Sprite2D" parent="Board/ETC" unique_id=1589267482]
+position = Vector2(262, 489)
+scale = Vector2(0.2087379, 0.18929718)
+texture = ExtResource("17_i65jc")
+
+[node name="Sprite2D32" type="Sprite2D" parent="Board/ETC" unique_id=454426927]
+position = Vector2(-358, 858)
+scale = Vector2(0.26725662, 0.26045626)
+texture = ExtResource("8_nht5p")
+
+[node name="Sprite2D33" type="Sprite2D" parent="Board/ETC" unique_id=768312469]
+position = Vector2(-355, 907)
+scale = Vector2(0.26725662, 0.26045626)
+texture = ExtResource("8_nht5p")
+
+[node name="Sprite2D34" type="Sprite2D" parent="Board/ETC" unique_id=1213376780]
+position = Vector2(-355, 957)
+scale = Vector2(0.26725662, 0.26045626)
+texture = ExtResource("8_nht5p")
+
+[node name="Sprite2D35" type="Sprite2D" parent="Board/ETC" unique_id=2019702441]
+position = Vector2(869, 483)
+scale = Vector2(0.22885032, 0.24038461)
+texture = ExtResource("18_gh54d")
+
+[node name="Sprite2D36" type="Sprite2D" parent="Board/ETC" unique_id=1369004874]
+position = Vector2(2123, 1322)
+scale = Vector2(0.22885032, 0.24038461)
+texture = ExtResource("18_gh54d")
+
+[node name="Sprite2D37" type="Sprite2D" parent="Board/ETC" unique_id=1733751054]
+position = Vector2(782, 1255)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
+
+[node name="Sprite2D38" type="Sprite2D" parent="Board/ETC" unique_id=521878939]
+position = Vector2(1269, 1393.0001)
+scale = Vector2(0.18103437, 0.15962449)
+texture = ExtResource("15_f7bt2")
+
+[node name="Sprite2D39" type="Sprite2D" parent="Board/ETC" unique_id=338328956]
+position = Vector2(304.74976, 1379.5)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
+
+[node name="Sprite2D40" type="Sprite2D" parent="Board/ETC" unique_id=833244494]
+position = Vector2(336.74976, 1379.5)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
+
+[node name="Sprite2D41" type="Sprite2D" parent="Board/ETC" unique_id=311180528]
+position = Vector2(366.75, 1378.5)
+scale = Vector2(0.46850392, 0.44354838)
+texture = ExtResource("9_hyw77")
+
+[node name="Traces" type="Node2D" parent="Board" unique_id=1645246315]
 z_index = -1
 
-[node name="Vertical100" type="Line2D" parent="Board/Traces"]
+[node name="Vertical100" type="Line2D" parent="Board/Traces" unique_id=1489105474]
 points = PackedVector2Array(100, 120, 100, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical180" type="Line2D" parent="Board/Traces"]
+[node name="Vertical180" type="Line2D" parent="Board/Traces" unique_id=1667932156]
 points = PackedVector2Array(180, 120, 180, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical260" type="Line2D" parent="Board/Traces"]
+[node name="Vertical260" type="Line2D" parent="Board/Traces" unique_id=480310404]
 points = PackedVector2Array(260, 120, 260, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical340" type="Line2D" parent="Board/Traces"]
+[node name="Vertical340" type="Line2D" parent="Board/Traces" unique_id=864075840]
 points = PackedVector2Array(340, 120, 340, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical420" type="Line2D" parent="Board/Traces"]
+[node name="Vertical420" type="Line2D" parent="Board/Traces" unique_id=1079432784]
 points = PackedVector2Array(420, 120, 420, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical500" type="Line2D" parent="Board/Traces"]
+[node name="Vertical500" type="Line2D" parent="Board/Traces" unique_id=62444630]
 points = PackedVector2Array(500, 120, 500, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical580" type="Line2D" parent="Board/Traces"]
+[node name="Vertical580" type="Line2D" parent="Board/Traces" unique_id=382789]
 points = PackedVector2Array(580, 120, 580, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical660" type="Line2D" parent="Board/Traces"]
+[node name="Vertical660" type="Line2D" parent="Board/Traces" unique_id=146312450]
 points = PackedVector2Array(660, 120, 660, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical740" type="Line2D" parent="Board/Traces"]
+[node name="Vertical740" type="Line2D" parent="Board/Traces" unique_id=1875672649]
 points = PackedVector2Array(740, 120, 740, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical820" type="Line2D" parent="Board/Traces"]
+[node name="Vertical820" type="Line2D" parent="Board/Traces" unique_id=1187376886]
 points = PackedVector2Array(820, 120, 820, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical900" type="Line2D" parent="Board/Traces"]
+[node name="Vertical900" type="Line2D" parent="Board/Traces" unique_id=427125121]
 points = PackedVector2Array(900, 120, 900, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical980" type="Line2D" parent="Board/Traces"]
+[node name="Vertical980" type="Line2D" parent="Board/Traces" unique_id=315154096]
 points = PackedVector2Array(980, 120, 980, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1060" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1060" type="Line2D" parent="Board/Traces" unique_id=1298676459]
 points = PackedVector2Array(1060, 120, 1060, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1140" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1140" type="Line2D" parent="Board/Traces" unique_id=1812424076]
 points = PackedVector2Array(1140, 120, 1140, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1220" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1220" type="Line2D" parent="Board/Traces" unique_id=1526321350]
 points = PackedVector2Array(1220, 120, 1220, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1300" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1300" type="Line2D" parent="Board/Traces" unique_id=1514597602]
 points = PackedVector2Array(1300, 120, 1300, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1380" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1380" type="Line2D" parent="Board/Traces" unique_id=595250387]
 points = PackedVector2Array(1380, 120, 1380, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Vertical1460" type="Line2D" parent="Board/Traces"]
+[node name="Vertical1460" type="Line2D" parent="Board/Traces" unique_id=735495175]
 points = PackedVector2Array(1460, 120, 1460, 870)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal150" type="Line2D" parent="Board/Traces"]
-points = PackedVector2Array(75, 150, 1525, 150)
+[node name="Horizontal150" type="Line2D" parent="Board/Traces" unique_id=290523157]
+points = PackedVector2Array(75, 150, 265.57935, 150, 1077.3536, 150.00002, 1104.2931, 150.00002, 1525, 150)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal230" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal230" type="Line2D" parent="Board/Traces" unique_id=1395072061]
 points = PackedVector2Array(75, 230, 1525, 230)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal310" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal310" type="Line2D" parent="Board/Traces" unique_id=1063670807]
 points = PackedVector2Array(75, 310, 1525, 310)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal390" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal390" type="Line2D" parent="Board/Traces" unique_id=635579861]
 points = PackedVector2Array(75, 390, 1525, 390)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal470" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal470" type="Line2D" parent="Board/Traces" unique_id=84493789]
 points = PackedVector2Array(75, 470, 1525, 470)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal550" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal550" type="Line2D" parent="Board/Traces" unique_id=38907942]
 points = PackedVector2Array(75, 550, 1525, 550)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal630" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal630" type="Line2D" parent="Board/Traces" unique_id=1487567862]
 points = PackedVector2Array(75, 630, 1525, 630)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal710" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal710" type="Line2D" parent="Board/Traces" unique_id=160203424]
 points = PackedVector2Array(75, 710, 1525, 710)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Horizontal790" type="Line2D" parent="Board/Traces"]
+[node name="Horizontal790" type="Line2D" parent="Board/Traces" unique_id=629740264]
 points = PackedVector2Array(75, 790, 1525, 790)
 width = 1.0
 default_color = Color(0.35, 0.65, 0.55, 0.065)
 
-[node name="Home" type="Marker2D" parent="Board"]
+[node name="Home" type="Marker2D" parent="Board" unique_id=918799607]
 position = Vector2(270, 690)
 
-[node name="Status" type="Label" parent="Board/Home"]
+[node name="Status" type="Label" parent="Board/Home" unique_id=1225124197]
 offset_left = -150.0
 offset_top = 85.0
 offset_right = 71.0
 offset_bottom = 124.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "ТВОЁ МЕСТО / БЕЗОПАСНАЯ ЗОНА"
 
-[node name="SafeZone" type="Polygon2D" parent="Board/Home"]
+[node name="SafeZone" type="Polygon2D" parent="Board/Home" unique_id=1503122085]
 color = Color(0.3, 0.7, 0.6, 0.12)
 polygon = PackedVector2Array(76, 0, 75.634, 7.4493, 74.5397, 14.8269, 72.7275, 22.0616, 70.2148, 29.0839, 67.026, 35.8261, 63.1917, 42.2233, 58.7488, 48.2139, 53.7401, 53.7401, 48.2139, 58.7488, 42.2233, 63.1917, 35.8262, 67.026, 29.0839, 70.2148, 22.0616, 72.7275, 14.8269, 74.5397, 7.4493, 75.634, -3.32207e-06, 76, -7.4493, 75.634, -14.8269, 74.5397, -22.0616, 72.7275, -29.0839, 70.2148, -35.8261, 67.026, -42.2233, 63.1917, -48.2139, 58.7488, -53.7401, 53.7401, -58.7488, 48.2139, -63.1917, 42.2233, -67.026, 35.8262, -70.2148, 29.0839, -72.7275, 22.0616, -74.5397, 14.8269, -75.634, 7.4493, -76, -6.64413e-06, -75.634, -7.44929, -74.5397, -14.8269, -72.7275, -22.0616, -70.2148, -29.0839, -67.026, -35.8262, -63.1917, -42.2233, -58.7488, -48.2139, -53.7401, -53.7401, -48.2139, -58.7488, -42.2234, -63.1917, -35.8261, -67.026, -29.084, -70.2148, -22.0616, -72.7275, -14.8269, -74.5397, -7.44929, -75.634, 9.06291e-07, -76, 7.44929, -75.634, 14.8269, -74.5397, 22.0616, -72.7275, 29.084, -70.2148, 35.8261, -67.026, 42.2233, -63.1917, 48.2139, -58.7488, 53.7401, -53.7401, 58.7488, -48.2139, 63.1917, -42.2233, 67.026, -35.8261, 70.2148, -29.0839, 72.7275, -22.0616, 74.5397, -14.8269, 75.634, -7.44931)
 
-[node name="SafeZoneOutline" type="Line2D" parent="Board/Home"]
+[node name="SafeZoneOutline" type="Line2D" parent="Board/Home" unique_id=861293214]
 points = PackedVector2Array(79, 0, 78.6196, 7.74335, 77.482, 15.4121, 75.5983, 22.9325, 72.9865, 30.232, 69.6718, 37.2403, 65.6861, 43.89, 61.0678, 50.1171, 55.8614, 55.8614, 50.1171, 61.0678, 43.89, 65.6861, 37.2403, 69.6718, 30.232, 72.9865, 22.9325, 75.5983, 15.4121, 77.482, 7.74335, 78.6196, -3.4532e-06, 79, -7.74335, 78.6196, -15.4121, 77.482, -22.9325, 75.5983, -30.232, 72.9865, -37.2403, 69.6718, -43.89, 65.6861, -50.1171, 61.0678, -55.8614, 55.8614, -61.0678, 50.1171, -65.6861, 43.89, -69.6718, 37.2403, -72.9865, 30.232, -75.5983, 22.9325, -77.482, 15.4121, -78.6196, 7.74335, -79, -6.9064e-06, -78.6196, -7.74335, -77.482, -15.4121, -75.5983, -22.9325, -72.9865, -30.232, -69.6718, -37.2403, -65.6861, -43.8901, -61.0678, -50.1171, -55.8614, -55.8614, -50.1171, -61.0678, -43.8901, -65.6861, -37.2403, -69.6718, -30.232, -72.9865, -22.9325, -75.5983, -15.4121, -77.482, -7.74334, -78.6196, 9.42066e-07, -79, 7.74334, -78.6196, 15.4121, -77.482, 22.9325, -75.5983, 30.232, -72.9865, 37.2403, -69.6718, 43.89, -65.6861, 50.1171, -61.0678, 55.8614, -55.8614, 61.0678, -50.1171, 65.6861, -43.8901, 69.6718, -37.2403, 72.9865, -30.232, 75.5983, -22.9325, 77.482, -15.4121, 78.6196, -7.74336)
 closed = true
 width = 2.0
 default_color = Color(0.501961, 0.835294, 0.768627, 1)
 
-[node name="Socket" type="Line2D" parent="Board/Home"]
+[node name="Socket" type="Line2D" parent="Board/Home" unique_id=921491863]
 points = PackedVector2Array(-30, -22, 30, -22, 30, 22, -30, 22)
 closed = true
 width = 3.0
 default_color = Color(0.351373, 0.584706, 0.538039, 1)
 
-[node name="Contact-43_-15" type="Line2D" parent="Board/Home"]
+[node name="Contact-43_-15" type="Line2D" parent="Board/Home" unique_id=1374666538]
 points = PackedVector2Array(-43, -15, -30, -15)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Contact-43_0" type="Line2D" parent="Board/Home"]
+[node name="Contact-43_0" type="Line2D" parent="Board/Home" unique_id=2125250489]
 points = PackedVector2Array(-43, 0, -30, 0)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Contact-43_15" type="Line2D" parent="Board/Home"]
+[node name="Contact-43_15" type="Line2D" parent="Board/Home" unique_id=1972951281]
 points = PackedVector2Array(-43, 15, -30, 15)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Contact43_-15" type="Line2D" parent="Board/Home"]
+[node name="Contact43_-15" type="Line2D" parent="Board/Home" unique_id=818139973]
 points = PackedVector2Array(43, -15, 30, -15)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Contact43_0" type="Line2D" parent="Board/Home"]
+[node name="Contact43_0" type="Line2D" parent="Board/Home" unique_id=1731364863]
 points = PackedVector2Array(43, 0, 30, 0)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Contact43_15" type="Line2D" parent="Board/Home"]
+[node name="Contact43_15" type="Line2D" parent="Board/Home" unique_id=1173075503]
 points = PackedVector2Array(43, 15, 30, 15)
 width = 3.0
 default_color = Color(0.905882, 0.721569, 0.419608, 1)
 
-[node name="Archive" type="Marker2D" parent="Board"]
-position = Vector2(1320, 310)
-
-[node name="Status" type="Label" parent="Board/Archive"]
-offset_left = -135.0
-offset_top = 90.0
-offset_right = 66.0
-offset_bottom = 129.0
-theme_override_font_sizes/font_size = 13
-theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
-theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
-theme_override_constants/outline_size = 4
-text = "АРХИВ НЕДОСТУПЕН ДО НОЧИ"
-
-[node name="DataPickup" type="Sprite2D" parent="Board/Archive"]
-visible = false
-position = Vector2(0, -10)
-scale = Vector2(0.42, 0.42)
-texture = ExtResource("6_wi5h4")
-
-[node name="ArchiveDrive" type="Sprite2D" parent="Board/Archive"]
-scale = Vector2(1.34328, 1.04839)
-texture = ExtResource("4_ebfw2")
-
-[node name="Floor" type="Sprite2D" parent="Board"]
-modulate = Color(0.47, 0.61, 0.56, 1)
-z_index = -10
-texture_repeat = 2
-texture = ExtResource("7_h6s5f")
-centered = false
-region_enabled = true
-region_rect = Rect2(0, 0, 1600, 960)
-
-[node name="Bolt95_140" type="Node2D" parent="Board"]
+[node name="Bolt95_140" type="Node2D" parent="Board" unique_id=1344952681]
 position = Vector2(95, 140)
 
-[node name="Socket" type="Polygon2D" parent="Board/Bolt95_140"]
+[node name="Socket" type="Polygon2D" parent="Board/Bolt95_140" unique_id=1815071138]
 color = Color(0.14902, 0.207843, 0.184314, 1)
 polygon = PackedVector2Array(13, 0, 12.9374, 1.27422, 12.7502, 2.53617, 12.4402, 3.7737, 12.0104, 4.97488, 11.465, 6.12816, 10.8091, 7.22241, 10.0491, 8.24711, 9.19239, 9.19239, 8.24711, 10.0491, 7.22241, 10.8091, 6.12816, 11.465, 4.97488, 12.0104, 3.7737, 12.4402, 2.53617, 12.7502, 1.27422, 12.9374, -5.68248e-07, 13, -1.27422, 12.9374, -2.53617, 12.7502, -3.7737, 12.4402, -4.97488, 12.0104, -6.12816, 11.465, -7.22241, 10.8091, -8.24711, 10.0491, -9.19239, 9.19239, -10.0491, 8.24711, -10.8091, 7.22241, -11.465, 6.12816, -12.0104, 4.97489, -12.4402, 3.7737, -12.7502, 2.53617, -12.9374, 1.27422, -13, -1.1365e-06, -12.9374, -1.27422, -12.7502, -2.53617, -12.4402, -3.7737, -12.0104, -4.97488, -11.465, -6.12816, -10.8091, -7.22241, -10.0491, -8.24711, -9.19239, -9.19239, -8.24711, -10.0491, -7.22242, -10.8091, -6.12816, -11.465, -4.97489, -12.0104, -3.7737, -12.4402, -2.53618, -12.7502, -1.27422, -12.9374, 1.55023e-07, -13, 1.27422, -12.9374, 2.53618, -12.7502, 3.7737, -12.4402, 4.97489, -12.0104, 6.12816, -11.465, 7.22241, -10.8091, 8.24711, -10.0491, 9.19239, -9.19239, 10.0491, -8.24711, 10.8091, -7.22241, 11.465, -6.12815, 12.0104, -4.97488, 12.4402, -3.7737, 12.7502, -2.53617, 12.9374, -1.27422)
 
-[node name="Screw" type="Polygon2D" parent="Board/Bolt95_140"]
+[node name="Screw" type="Polygon2D" parent="Board/Bolt95_140" unique_id=1641117277]
 color = Color(0.478431, 0.54902, 0.458824, 1)
 polygon = PackedVector2Array(6, 0, 5.97111, 0.588103, 5.88471, 1.17054, 5.74164, 1.74171, 5.54328, 2.2961, 5.29153, 2.82838, 4.98882, 3.33342, 4.63806, 3.80636, 4.24264, 4.24264, 3.80636, 4.63806, 3.33342, 4.98882, 2.82838, 5.29153, 2.2961, 5.54328, 1.74171, 5.74164, 1.17054, 5.88471, 0.588103, 5.97111, -2.62268e-07, 6, -0.588103, 5.97111, -1.17054, 5.88471, -1.74171, 5.74164, -2.2961, 5.54328, -2.82838, 5.29153, -3.33342, 4.98882, -3.80636, 4.63806, -4.24264, 4.24264, -4.63806, 3.80636, -4.98882, 3.33342, -5.29153, 2.82838, -5.54328, 2.2961, -5.74164, 1.74171, -5.88471, 1.17054, -5.97111, 0.588103, -6, -5.24537e-07, -5.97111, -0.588102, -5.88471, -1.17054, -5.74164, -1.74171, -5.54328, -2.2961, -5.29153, -2.82838, -4.98882, -3.33342, -4.63806, -3.80636, -4.24264, -4.24264, -3.80636, -4.63806, -3.33342, -4.98882, -2.82838, -5.29153, -2.2961, -5.54328, -1.74171, -5.74164, -1.17054, -5.88471, -0.588102, -5.97111, 7.15493e-08, -6, 0.588102, -5.97111, 1.17054, -5.88471, 1.74171, -5.74164, 2.2961, -5.54328, 2.82838, -5.29153, 3.33342, -4.98882, 3.80636, -4.63806, 4.24264, -4.24264, 4.63806, -3.80636, 4.98882, -3.33342, 5.29153, -2.82838, 5.54328, -2.2961, 5.74164, -1.74171, 5.88471, -1.17054, 5.97111, -0.588103)
 
-[node name="Bolt1505_140" type="Node2D" parent="Board"]
+[node name="Bolt1505_140" type="Node2D" parent="Board" unique_id=718427433]
 position = Vector2(1505, 140)
 
-[node name="Socket" type="Polygon2D" parent="Board/Bolt1505_140"]
+[node name="Socket" type="Polygon2D" parent="Board/Bolt1505_140" unique_id=1827953034]
 color = Color(0.14902, 0.207843, 0.184314, 1)
 polygon = PackedVector2Array(13, 0, 12.9374, 1.27422, 12.7502, 2.53617, 12.4402, 3.7737, 12.0104, 4.97488, 11.465, 6.12816, 10.8091, 7.22241, 10.0491, 8.24711, 9.19239, 9.19239, 8.24711, 10.0491, 7.22241, 10.8091, 6.12816, 11.465, 4.97488, 12.0104, 3.7737, 12.4402, 2.53617, 12.7502, 1.27422, 12.9374, -5.68248e-07, 13, -1.27422, 12.9374, -2.53617, 12.7502, -3.7737, 12.4402, -4.97488, 12.0104, -6.12816, 11.465, -7.22241, 10.8091, -8.24711, 10.0491, -9.19239, 9.19239, -10.0491, 8.24711, -10.8091, 7.22241, -11.465, 6.12816, -12.0104, 4.97489, -12.4402, 3.7737, -12.7502, 2.53617, -12.9374, 1.27422, -13, -1.1365e-06, -12.9374, -1.27422, -12.7502, -2.53617, -12.4402, -3.7737, -12.0104, -4.97488, -11.465, -6.12816, -10.8091, -7.22241, -10.0491, -8.24711, -9.19239, -9.19239, -8.24711, -10.0491, -7.22242, -10.8091, -6.12816, -11.465, -4.97489, -12.0104, -3.7737, -12.4402, -2.53618, -12.7502, -1.27422, -12.9374, 1.55023e-07, -13, 1.27422, -12.9374, 2.53618, -12.7502, 3.7737, -12.4402, 4.97489, -12.0104, 6.12816, -11.465, 7.22241, -10.8091, 8.24711, -10.0491, 9.19239, -9.19239, 10.0491, -8.24711, 10.8091, -7.22241, 11.465, -6.12815, 12.0104, -4.97488, 12.4402, -3.7737, 12.7502, -2.53617, 12.9374, -1.27422)
 
-[node name="Screw" type="Polygon2D" parent="Board/Bolt1505_140"]
+[node name="Screw" type="Polygon2D" parent="Board/Bolt1505_140" unique_id=820539693]
 color = Color(0.478431, 0.54902, 0.458824, 1)
 polygon = PackedVector2Array(6, 0, 5.97111, 0.588103, 5.88471, 1.17054, 5.74164, 1.74171, 5.54328, 2.2961, 5.29153, 2.82838, 4.98882, 3.33342, 4.63806, 3.80636, 4.24264, 4.24264, 3.80636, 4.63806, 3.33342, 4.98882, 2.82838, 5.29153, 2.2961, 5.54328, 1.74171, 5.74164, 1.17054, 5.88471, 0.588103, 5.97111, -2.62268e-07, 6, -0.588103, 5.97111, -1.17054, 5.88471, -1.74171, 5.74164, -2.2961, 5.54328, -2.82838, 5.29153, -3.33342, 4.98882, -3.80636, 4.63806, -4.24264, 4.24264, -4.63806, 3.80636, -4.98882, 3.33342, -5.29153, 2.82838, -5.54328, 2.2961, -5.74164, 1.74171, -5.88471, 1.17054, -5.97111, 0.588103, -6, -5.24537e-07, -5.97111, -0.588102, -5.88471, -1.17054, -5.74164, -1.74171, -5.54328, -2.2961, -5.29153, -2.82838, -4.98882, -3.33342, -4.63806, -3.80636, -4.24264, -4.24264, -3.80636, -4.63806, -3.33342, -4.98882, -2.82838, -5.29153, -2.2961, -5.54328, -1.74171, -5.74164, -1.17054, -5.88471, -0.588102, -5.97111, 7.15493e-08, -6, 0.588102, -5.97111, 1.17054, -5.88471, 1.74171, -5.74164, 2.2961, -5.54328, 2.82838, -5.29153, 3.33342, -4.98882, 3.80636, -4.63806, 4.24264, -4.24264, 4.63806, -3.80636, 4.98882, -3.33342, 5.29153, -2.82838, 5.54328, -2.2961, 5.74164, -1.74171, 5.88471, -1.17054, 5.97111, -0.588103)
 
-[node name="Bolt95_850" type="Node2D" parent="Board"]
+[node name="Bolt95_850" type="Node2D" parent="Board" unique_id=54862902]
 position = Vector2(95, 850)
 
-[node name="Socket" type="Polygon2D" parent="Board/Bolt95_850"]
+[node name="Socket" type="Polygon2D" parent="Board/Bolt95_850" unique_id=1414892885]
 color = Color(0.14902, 0.207843, 0.184314, 1)
 polygon = PackedVector2Array(13, 0, 12.9374, 1.27422, 12.7502, 2.53617, 12.4402, 3.7737, 12.0104, 4.97488, 11.465, 6.12816, 10.8091, 7.22241, 10.0491, 8.24711, 9.19239, 9.19239, 8.24711, 10.0491, 7.22241, 10.8091, 6.12816, 11.465, 4.97488, 12.0104, 3.7737, 12.4402, 2.53617, 12.7502, 1.27422, 12.9374, -5.68248e-07, 13, -1.27422, 12.9374, -2.53617, 12.7502, -3.7737, 12.4402, -4.97488, 12.0104, -6.12816, 11.465, -7.22241, 10.8091, -8.24711, 10.0491, -9.19239, 9.19239, -10.0491, 8.24711, -10.8091, 7.22241, -11.465, 6.12816, -12.0104, 4.97489, -12.4402, 3.7737, -12.7502, 2.53617, -12.9374, 1.27422, -13, -1.1365e-06, -12.9374, -1.27422, -12.7502, -2.53617, -12.4402, -3.7737, -12.0104, -4.97488, -11.465, -6.12816, -10.8091, -7.22241, -10.0491, -8.24711, -9.19239, -9.19239, -8.24711, -10.0491, -7.22242, -10.8091, -6.12816, -11.465, -4.97489, -12.0104, -3.7737, -12.4402, -2.53618, -12.7502, -1.27422, -12.9374, 1.55023e-07, -13, 1.27422, -12.9374, 2.53618, -12.7502, 3.7737, -12.4402, 4.97489, -12.0104, 6.12816, -11.465, 7.22241, -10.8091, 8.24711, -10.0491, 9.19239, -9.19239, 10.0491, -8.24711, 10.8091, -7.22241, 11.465, -6.12815, 12.0104, -4.97488, 12.4402, -3.7737, 12.7502, -2.53617, 12.9374, -1.27422)
 
-[node name="Screw" type="Polygon2D" parent="Board/Bolt95_850"]
+[node name="Screw" type="Polygon2D" parent="Board/Bolt95_850" unique_id=773965629]
 color = Color(0.478431, 0.54902, 0.458824, 1)
 polygon = PackedVector2Array(6, 0, 5.97111, 0.588103, 5.88471, 1.17054, 5.74164, 1.74171, 5.54328, 2.2961, 5.29153, 2.82838, 4.98882, 3.33342, 4.63806, 3.80636, 4.24264, 4.24264, 3.80636, 4.63806, 3.33342, 4.98882, 2.82838, 5.29153, 2.2961, 5.54328, 1.74171, 5.74164, 1.17054, 5.88471, 0.588103, 5.97111, -2.62268e-07, 6, -0.588103, 5.97111, -1.17054, 5.88471, -1.74171, 5.74164, -2.2961, 5.54328, -2.82838, 5.29153, -3.33342, 4.98882, -3.80636, 4.63806, -4.24264, 4.24264, -4.63806, 3.80636, -4.98882, 3.33342, -5.29153, 2.82838, -5.54328, 2.2961, -5.74164, 1.74171, -5.88471, 1.17054, -5.97111, 0.588103, -6, -5.24537e-07, -5.97111, -0.588102, -5.88471, -1.17054, -5.74164, -1.74171, -5.54328, -2.2961, -5.29153, -2.82838, -4.98882, -3.33342, -4.63806, -3.80636, -4.24264, -4.24264, -3.80636, -4.63806, -3.33342, -4.98882, -2.82838, -5.29153, -2.2961, -5.54328, -1.74171, -5.74164, -1.17054, -5.88471, -0.588102, -5.97111, 7.15493e-08, -6, 0.588102, -5.97111, 1.17054, -5.88471, 1.74171, -5.74164, 2.2961, -5.54328, 2.82838, -5.29153, 3.33342, -4.98882, 3.80636, -4.63806, 4.24264, -4.24264, 4.63806, -3.80636, 4.98882, -3.33342, 5.29153, -2.82838, 5.54328, -2.2961, 5.74164, -1.74171, 5.88471, -1.17054, 5.97111, -0.588103)
 
-[node name="Bolt1505_850" type="Node2D" parent="Board"]
+[node name="Bolt1505_850" type="Node2D" parent="Board" unique_id=1913852520]
 position = Vector2(1505, 850)
 
-[node name="Socket" type="Polygon2D" parent="Board/Bolt1505_850"]
+[node name="Socket" type="Polygon2D" parent="Board/Bolt1505_850" unique_id=116495498]
 color = Color(0.14902, 0.207843, 0.184314, 1)
 polygon = PackedVector2Array(13, 0, 12.9374, 1.27422, 12.7502, 2.53617, 12.4402, 3.7737, 12.0104, 4.97488, 11.465, 6.12816, 10.8091, 7.22241, 10.0491, 8.24711, 9.19239, 9.19239, 8.24711, 10.0491, 7.22241, 10.8091, 6.12816, 11.465, 4.97488, 12.0104, 3.7737, 12.4402, 2.53617, 12.7502, 1.27422, 12.9374, -5.68248e-07, 13, -1.27422, 12.9374, -2.53617, 12.7502, -3.7737, 12.4402, -4.97488, 12.0104, -6.12816, 11.465, -7.22241, 10.8091, -8.24711, 10.0491, -9.19239, 9.19239, -10.0491, 8.24711, -10.8091, 7.22241, -11.465, 6.12816, -12.0104, 4.97489, -12.4402, 3.7737, -12.7502, 2.53617, -12.9374, 1.27422, -13, -1.1365e-06, -12.9374, -1.27422, -12.7502, -2.53617, -12.4402, -3.7737, -12.0104, -4.97488, -11.465, -6.12816, -10.8091, -7.22241, -10.0491, -8.24711, -9.19239, -9.19239, -8.24711, -10.0491, -7.22242, -10.8091, -6.12816, -11.465, -4.97489, -12.0104, -3.7737, -12.4402, -2.53618, -12.7502, -1.27422, -12.9374, 1.55023e-07, -13, 1.27422, -12.9374, 2.53618, -12.7502, 3.7737, -12.4402, 4.97489, -12.0104, 6.12816, -11.465, 7.22241, -10.8091, 8.24711, -10.0491, 9.19239, -9.19239, 10.0491, -8.24711, 10.8091, -7.22241, 11.465, -6.12815, 12.0104, -4.97488, 12.4402, -3.7737, 12.7502, -2.53617, 12.9374, -1.27422)
 
-[node name="Screw" type="Polygon2D" parent="Board/Bolt1505_850"]
+[node name="Screw" type="Polygon2D" parent="Board/Bolt1505_850" unique_id=1023065701]
 color = Color(0.478431, 0.54902, 0.458824, 1)
 polygon = PackedVector2Array(6, 0, 5.97111, 0.588103, 5.88471, 1.17054, 5.74164, 1.74171, 5.54328, 2.2961, 5.29153, 2.82838, 4.98882, 3.33342, 4.63806, 3.80636, 4.24264, 4.24264, 3.80636, 4.63806, 3.33342, 4.98882, 2.82838, 5.29153, 2.2961, 5.54328, 1.74171, 5.74164, 1.17054, 5.88471, 0.588103, 5.97111, -2.62268e-07, 6, -0.588103, 5.97111, -1.17054, 5.88471, -1.74171, 5.74164, -2.2961, 5.54328, -2.82838, 5.29153, -3.33342, 4.98882, -3.80636, 4.63806, -4.24264, 4.24264, -4.63806, 3.80636, -4.98882, 3.33342, -5.29153, 2.82838, -5.54328, 2.2961, -5.74164, 1.74171, -5.88471, 1.17054, -5.97111, 0.588103, -6, -5.24537e-07, -5.97111, -0.588102, -5.88471, -1.17054, -5.74164, -1.74171, -5.54328, -2.2961, -5.29153, -2.82838, -4.98882, -3.33342, -4.63806, -3.80636, -4.24264, -4.24264, -3.80636, -4.63806, -3.33342, -4.98882, -2.82838, -5.29153, -2.2961, -5.54328, -1.74171, -5.74164, -1.17054, -5.88471, -0.588102, -5.97111, 7.15493e-08, -6, 0.588102, -5.97111, 1.17054, -5.88471, 1.74171, -5.74164, 2.2961, -5.54328, 2.82838, -5.29153, 3.33342, -4.98882, 3.80636, -4.63806, 4.24264, -4.24264, 4.63806, -3.80636, 4.98882, -3.33342, 5.29153, -2.82838, 5.54328, -2.2961, 5.74164, -1.74171, 5.88471, -1.17054, 5.97111, -0.588103)
 
-[node name="Actors" type="Node2D" parent="."]
+[node name="Lamps" type="Node2D" parent="Board" unique_id=1797541921]
 
-[node name="Player" type="CharacterBody2D" parent="Actors"]
+[node name="Blue_lamp" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=191573393]
+position = Vector2(297.00003, 152)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.1491407
+
+[node name="Red_lamp" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=505545585]
+position = Vector2(411, 374)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9037322
+
+[node name="Green_lamp" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1270914715]
+position = Vector2(591, 144.99998)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.52557826
+
+[node name="Blue_lamp2" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1312011456]
+position = Vector2(1100, 225)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.21681547
+
+[node name="Blue_lamp3" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=792338311]
+position = Vector2(696.75, 436.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Red_lamp2" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1101278961]
+position = Vector2(810.75, 658.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp2" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=848787573]
+position = Vector2(990.75, 429.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.58145106
+
+[node name="Blue_lamp4" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1830064122]
+position = Vector2(370.75, 816.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Red_lamp3" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=897676303]
+position = Vector2(484.74997, 1038.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp3" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1507907967]
+position = Vector2(664.75, 809.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.58145106
+
+[node name="Blue_lamp5" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1323989264]
+position = Vector2(1172.75, 795.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Red_lamp4" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1514615596]
+position = Vector2(1286.75, 1017.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.69052243
+
+[node name="Green_lamp4" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1140390256]
+position = Vector2(1466.75, 788.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.58145106
+
+[node name="Blue_lamp6" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=2108496653]
+position = Vector2(1599.75, 1017.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Red_lamp5" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=491278688]
+position = Vector2(1713.75, 1239.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp5" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=22647536]
+position = Vector2(1893.75, 1010.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.58145106
+
+[node name="Blue_lamp7" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1039462902]
+position = Vector2(1998.75, 867.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Red_lamp6" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=963499767]
+position = Vector2(2112.75, 1089.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp6" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1600243594]
+position = Vector2(2292.75, 860.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.58145106
+
+[node name="Blue_lamp8" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=61562547]
+position = Vector2(1895.0002, 1329)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.36979142
+
+[node name="Red_lamp7" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1014433810]
+position = Vector2(2642, 918)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.6042634
+
+[node name="Green_lamp7" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=320698503]
+position = Vector2(2368, 1300.9999)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.22612265
+
+[node name="Red_lamp8" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1413452172]
+position = Vector2(1438, 1354)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp8" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1259323608]
+position = Vector2(1157, 1317)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Green_lamp9" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=472022724]
+position = Vector2(930, 1257)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Red_lamp9" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=181888818]
+position = Vector2(669, 1353)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp10" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1574793816]
+position = Vector2(486.625, 1261.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Red_lamp10" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=893575076]
+position = Vector2(225.625, 1357.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Green_lamp11" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=407712475]
+position = Vector2(69.625, 1262.375)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Red_lamp11" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1376374950]
+position = Vector2(-191.375, 1358.375)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Blue_lamp9" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=66660899]
+position = Vector2(-297.99994, 1236)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Green_lamp12" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=265985298]
+position = Vector2(-302.62506, 1146.75)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Red_lamp12" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=488267006]
+position = Vector2(-563.62506, 1242.75)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Blue_lamp10" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1361978496]
+position = Vector2(-670.25, 1120.375)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Green_lamp13" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=759781089]
+position = Vector2(-698, 837)
+scale = Vector2(0.20588213, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_1lkgt")
+animation = &"Idle"
+frame_progress = 0.7454349
+
+[node name="Red_lamp13" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=1067837673]
+position = Vector2(-622, 999)
+scale = Vector2(0.19558814, 0.21161431)
+sprite_frames = SubResource("SpriteFrames_315sa")
+animation = &"Idle"
+frame_progress = 0.9595895
+
+[node name="Blue_lamp11" type="AnimatedSprite2D" parent="Board/Lamps" unique_id=150224734]
+position = Vector2(-279.00006, 1032)
+scale = Vector2(0.19705889, 0.21062994)
+sprite_frames = SubResource("SpriteFrames_6pxar")
+animation = &"Idle"
+frame_progress = 0.98301184
+
+[node name="Walls" type="Node2D" parent="Board" unique_id=42798980]
+
+[node name="TextureRect" type="TextureRect" parent="Board/Walls" unique_id=1139507181]
+offset_left = -4.0
+offset_top = -73.0
+offset_right = 7195.9995
+offset_bottom = 375.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_md1xy")
+stretch_mode = 1
+metadata/_edit_use_anchors_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="Board/Walls" unique_id=45542473]
+position = Vector2(38.000004, -5.9999995)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("31_bjc5q")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Board/Walls" unique_id=353073565]
+position = Vector2(1468.5, -18)
+scale = Vector2(0.1825, 0.24308036)
+texture = ExtResource("32_h5fse")
+
+[node name="TextureRect2" type="TextureRect" parent="Board/Walls" unique_id=686440554]
+offset_left = 2139.0
+offset_top = 652.99994
+offset_right = 5018.9985
+offset_bottom = 1101.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_md1xy")
+stretch_mode = 1
+
+[node name="Sprite2D3" type="Sprite2D" parent="Board/Walls" unique_id=1646014836]
+position = Vector2(2098, 697.5)
+scale = Vector2(0.2, 0.20758928)
+texture = ExtResource("33_8qpgk")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Board/Walls" unique_id=1079701431]
+position = Vector2(2747.5, 708)
+scale = Vector2(0.1825, 0.24308036)
+texture = ExtResource("32_h5fse")
+
+[node name="TextureRect3" type="TextureRect" parent="Board/Walls" unique_id=1300117869]
+offset_left = 1500.0
+offset_top = 652.0
+offset_right = 4309.9995
+offset_bottom = 1100.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_md1xy")
+stretch_mode = 1
+
+[node name="TextureRect4" type="TextureRect" parent="Board/Walls" unique_id=1183148051]
+offset_left = -708.0
+offset_top = 1391.0
+offset_right = 16346.998
+offset_bottom = 1839.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_md1xy")
+stretch_mode = 1
+
+[node name="Sprite2D5" type="Sprite2D" parent="Board/Walls" unique_id=1840435913]
+position = Vector2(2743.0002, 1401.9999)
+scale = Vector2(0.21624914, 0.2865233)
+texture = ExtResource("32_h5fse")
+flip_v = true
+
+[node name="fall_left5" type="Sprite2D" parent="Board/Walls" unique_id=606651567]
+position = Vector2(-743.25, 1406.9999)
+scale = Vector2(0.244, 0.20239417)
+texture = ExtResource("6_ebfw2")
+flip_h = true
+flip_v = true
+
+[node name="TextureRect5" type="TextureRect" parent="Board/Walls" unique_id=97932142]
+offset_left = -796.0
+offset_top = 704.0
+offset_right = 2318.9995
+offset_bottom = 1152.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("30_md1xy")
+stretch_mode = 1
+
+[node name="Sprite2D6" type="Sprite2D" parent="Board/Walls" unique_id=787404804]
+position = Vector2(-757, 773.00006)
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("31_bjc5q")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Board/Walls" unique_id=1666721036]
+position = Vector2(-200.00002, 756.00006)
+scale = Vector2(0.1825, 0.24603792)
+texture = ExtResource("32_h5fse")
+
+[node name="TextureRect6" type="TextureRect" parent="Board/Walls" unique_id=1157240303]
+offset_left = -795.0
+offset_top = 813.0
+offset_right = -589.0
+offset_bottom = 3858.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("34_hcrkf")
+stretch_mode = 1
+
+[node name="TextureRect7" type="TextureRect" parent="Board/Walls" unique_id=958472994]
+offset_left = -6.1035156e-05
+offset_top = 23.000061
+offset_right = 205.99994
+offset_bottom = 5247.999
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("34_hcrkf")
+stretch_mode = 1
+
+[node name="TextureRect8" type="TextureRect" parent="Board/Walls" unique_id=1528334866]
+offset_left = 1472.0
+offset_top = 31.0
+offset_right = 1678.0
+offset_bottom = 3155.9998
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("34_hcrkf")
+stretch_mode = 1
+flip_h = true
+
+[node name="TextureRect9" type="TextureRect" parent="Board/Walls" unique_id=644670105]
+offset_left = 2749.0
+offset_top = 751.0
+offset_right = 2955.0
+offset_bottom = 3796.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("34_hcrkf")
+stretch_mode = 1
+flip_h = true
+
+[node name="TextureRect10" type="TextureRect" parent="Board/Walls" unique_id=1025351483]
+offset_left = -206.0
+offset_top = 806.0
+offset_bottom = 2596.0
+scale = Vector2(0.2, 0.2)
+texture = ExtResource("34_hcrkf")
+stretch_mode = 1
+flip_h = true
+
+[node name="Actors" type="Node2D" parent="." unique_id=2119604647]
+
+[node name="Player" type="CharacterBody2D" parent="Actors" unique_id=318319676]
 position = Vector2(270, 690)
 script = ExtResource("8_m0jq3")
 speed = 205.0
 
-[node name="Camera2D" type="Camera2D" parent="Actors/Player"]
-zoom = Vector2(0.8, 0.8)
-limit_left = 0
-limit_top = 0
-limit_right = 1600
-limit_bottom = 960
+[node name="Camera2D" type="Camera2D" parent="Actors/Player" unique_id=729973599]
+position = Vector2(-423, -288)
+anchor_mode = 0
+ignore_rotation = false
+zoom = Vector2(1.5, 1.5)
+process_callback = 0
+limit_enabled = false
+limit_left = 121
+limit_top = 534
+limit_right = 394
+limit_bottom = 805
 position_smoothing_enabled = true
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Player"]
-position = Vector2(0, 10)
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Player" unique_id=673657218]
+position = Vector2(-2, -1)
 shape = SubResource("CircleShape2D_k37m4")
 
-[node name="Visual" type="AnimatedSprite2D" parent="Actors/Player"]
-position = Vector2(0, -24)
+[node name="Visual" type="AnimatedSprite2D" parent="Actors/Player" unique_id=43645986]
+position = Vector2(1, -7)
 scale = Vector2(0.65, 0.65)
 sprite_frames = SubResource("SpriteFrames_6kcos")
 animation = &"idle"
 
-[node name="Resistor" type="StaticBody2D" parent="Actors" groups=["prototype_npcs"]]
-position = Vector2(330, 330)
+[node name="Resistor" type="StaticBody2D" parent="Actors" unique_id=1281542839 groups=["prototype_npcs"]]
+position = Vector2(216, 302)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["Системе не хватает питания. Возьми контакт и восстанови блок справа от меня.", "Почини питание, а ночью забери данные из архива за проходом. Не задерживайся в темноте."])
 display_name = "Резистор · наставник"
 
-[node name="Visual" type="AnimatedSprite2D" parent="Actors/Resistor"]
+[node name="Visual" type="AnimatedSprite2D" parent="Actors/Resistor" unique_id=1217930588]
 position = Vector2(0, -18)
 scale = Vector2(0.29, 0.29)
 sprite_frames = SubResource("SpriteFrames_65gnt")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Resistor"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Resistor" unique_id=1408740853]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_umqvs")
 
-[node name="InteractionZone" type="Area2D" parent="Actors/Resistor"]
+[node name="InteractionZone" type="Area2D" parent="Actors/Resistor" unique_id=1362357843]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Resistor/InteractionZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Resistor/InteractionZone" unique_id=183329763]
 shape = SubResource("CircleShape2D_mcvl2")
 debug_color = Color(0, 0.598171, 0.129828, 0.419608)
 
-[node name="Hint" type="Label" parent="Actors/Resistor"]
+[node name="Hint" type="Label" parent="Actors/Resistor" unique_id=123264780]
 visible = false
 offset_left = -18.0
 offset_top = -60.0
@@ -1039,18 +1640,18 @@ text = "[E]"
 label_settings = SubResource("LabelSettings_bc6q4")
 horizontal_alignment = 1
 
-[node name="NameLabel" type="Label" parent="Actors/Resistor"]
+[node name="NameLabel" type="Label" parent="Actors/Resistor" unique_id=1475439828]
 offset_left = -85.0
 offset_top = 55.0
 offset_right = 55.0
 offset_bottom = 94.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "Резистор · наставник"
 
-[node name="Diode" type="StaticBody2D" parent="Actors" groups=["prototype_npcs"]]
+[node name="Diode" type="StaticBody2D" parent="Actors" unique_id=1014610460 groups=["prototype_npcs"]]
 position = Vector2(655, 535)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["Проход на восток откроется после ремонта питания.", "Архив отдаёт данные только ночью. С ними восстанови терминал охлаждения. Твоё место внизу слева защищает от помех."])
@@ -1059,23 +1660,23 @@ display_name = "Диод · проводник"
 asset_folder = "res://assets/characters/npc/diode"
 gives_part = false
 
-[node name="Visual" type="AnimatedSprite2D" parent="Actors/Diode"]
+[node name="Visual" type="AnimatedSprite2D" parent="Actors/Diode" unique_id=1911388456]
 position = Vector2(0, -18)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_n06l4")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Diode"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Diode" unique_id=1848437922]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_y7eul")
 
-[node name="InteractionZone" type="Area2D" parent="Actors/Diode"]
+[node name="InteractionZone" type="Area2D" parent="Actors/Diode" unique_id=948935326]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Diode/InteractionZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Diode/InteractionZone" unique_id=1150827822]
 shape = SubResource("CircleShape2D_mcvl2")
 debug_color = Color(0, 0.598171, 0.129828, 0.419608)
 
-[node name="Hint" type="Label" parent="Actors/Diode"]
+[node name="Hint" type="Label" parent="Actors/Diode" unique_id=2093424774]
 visible = false
 offset_left = -18.0
 offset_top = -60.0
@@ -1085,18 +1686,18 @@ text = "[E]"
 label_settings = SubResource("LabelSettings_bc6q4")
 horizontal_alignment = 1
 
-[node name="NameLabel" type="Label" parent="Actors/Diode"]
+[node name="NameLabel" type="Label" parent="Actors/Diode" unique_id=2096813297]
 offset_left = -85.0
 offset_top = 55.0
 offset_right = 33.0
 offset_bottom = 94.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "Диод · проводник"
 
-[node name="Microchip" type="StaticBody2D" parent="Actors" groups=["prototype_npcs"]]
+[node name="Microchip" type="StaticBody2D" parent="Actors" unique_id=2131131829 groups=["prototype_npcs"]]
 position = Vector2(1150, 435)
 script = ExtResource("27_lvgce")
 dialogue = Array[String](["В архиве сохранился адрес твоей ячейки.", "Восстанови терминал и вернись на своё место до рассвета. Ночью двигайся: помехи чувствуют остановки."])
@@ -1105,23 +1706,23 @@ display_name = "Микросхема · диспетчер"
 asset_folder = "res://assets/characters/npc/microchip"
 gives_part = false
 
-[node name="Visual" type="AnimatedSprite2D" parent="Actors/Microchip"]
+[node name="Visual" type="AnimatedSprite2D" parent="Actors/Microchip" unique_id=1794698324]
 position = Vector2(0, -18)
 scale = Vector2(0.85, 0.85)
 sprite_frames = SubResource("SpriteFrames_kuwo1")
 animation = &"idle"
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Microchip"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Microchip" unique_id=1948800630]
 position = Vector2(0, 13)
 shape = SubResource("RectangleShape2D_5314a")
 
-[node name="InteractionZone" type="Area2D" parent="Actors/Microchip"]
+[node name="InteractionZone" type="Area2D" parent="Actors/Microchip" unique_id=912834135]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Microchip/InteractionZone"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/Microchip/InteractionZone" unique_id=1607320588]
 shape = SubResource("CircleShape2D_mcvl2")
 debug_color = Color(0, 0.598171, 0.129828, 0.419608)
 
-[node name="Hint" type="Label" parent="Actors/Microchip"]
+[node name="Hint" type="Label" parent="Actors/Microchip" unique_id=1597662187]
 visible = false
 offset_left = -18.0
 offset_top = -60.0
@@ -1131,18 +1732,18 @@ text = "[E]"
 label_settings = SubResource("LabelSettings_bc6q4")
 horizontal_alignment = 1
 
-[node name="NameLabel" type="Label" parent="Actors/Microchip"]
+[node name="NameLabel" type="Label" parent="Actors/Microchip" unique_id=1944980952]
 offset_left = -85.0
 offset_top = 55.0
 offset_right = 79.0
 offset_bottom = 94.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.501961, 0.835294, 0.768627, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "Микросхема · диспетчер"
 
-[node name="PowerSupply" type="StaticBody2D" parent="Actors"]
+[node name="PowerSupply" type="StaticBody2D" parent="Actors" unique_id=1087951388]
 position = Vector2(615, 325)
 script = ExtResource("64_jgvlb")
 texture_working = ExtResource("65_2lmj4")
@@ -1153,22 +1754,22 @@ object_id = &"power"
 auto_break_min = 0.0
 auto_break_max = 0.0
 
-[node name="Sprite" type="Sprite2D" parent="Actors/PowerSupply"]
+[node name="Sprite" type="Sprite2D" parent="Actors/PowerSupply" unique_id=474376703]
 scale = Vector2(1.28788, 1)
 texture = ExtResource("66_cnc3x")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/PowerSupply"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/PowerSupply" unique_id=1473292533]
 position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="Area2D" type="Area2D" parent="Actors/PowerSupply"]
+[node name="Area2D" type="Area2D" parent="Actors/PowerSupply" unique_id=1040010185]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/PowerSupply/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/PowerSupply/Area2D" unique_id=1910597422]
 shape = SubResource("CircleShape2D_xrivr")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Actors/PowerSupply"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Actors/PowerSupply" unique_id=325164452]
 
-[node name="Label" type="Label" parent="Actors/PowerSupply/CanvasLayer"]
+[node name="Label" type="Label" parent="Actors/PowerSupply/CanvasLayer" unique_id=1662710890]
 visible = false
 offset_left = -9.0
 offset_top = -104.0
@@ -1178,18 +1779,18 @@ text = "[E] Починить · 1 контакт"
 label_settings = SubResource("LabelSettings_xrivr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="Actors/PowerSupply"]
+[node name="Title" type="Label" parent="Actors/PowerSupply" unique_id=1228666818]
 offset_left = -125.0
 offset_top = -95.0
 offset_right = -21.0
 offset_bottom = -56.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "БЛОК ПИТАНИЯ"
 
-[node name="CoolingTerminal" type="StaticBody2D" parent="Actors"]
+[node name="CoolingTerminal" type="StaticBody2D" parent="Actors" unique_id=1510875744]
 position = Vector2(1220, 705)
 script = ExtResource("64_jgvlb")
 texture_working = ExtResource("67_ulcrq")
@@ -1200,22 +1801,22 @@ object_id = &"terminal"
 auto_break_min = 0.0
 auto_break_max = 0.0
 
-[node name="Sprite" type="Sprite2D" parent="Actors/CoolingTerminal"]
+[node name="Sprite" type="Sprite2D" parent="Actors/CoolingTerminal" unique_id=623476994]
 scale = Vector2(1.33858, 1)
 texture = ExtResource("68_pfmi2")
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/CoolingTerminal"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/CoolingTerminal" unique_id=555610518]
 position = Vector2(0.25, 0)
 shape = SubResource("RectangleShape2D_xrivr")
 
-[node name="Area2D" type="Area2D" parent="Actors/CoolingTerminal"]
+[node name="Area2D" type="Area2D" parent="Actors/CoolingTerminal" unique_id=1542463043]
 
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/CoolingTerminal/Area2D"]
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Actors/CoolingTerminal/Area2D" unique_id=627672803]
 shape = SubResource("CircleShape2D_xrivr")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="Actors/CoolingTerminal"]
+[node name="CanvasLayer" type="CanvasLayer" parent="Actors/CoolingTerminal" unique_id=1442798925]
 
-[node name="Label" type="Label" parent="Actors/CoolingTerminal/CanvasLayer"]
+[node name="Label" type="Label" parent="Actors/CoolingTerminal/CanvasLayer" unique_id=2098967472]
 visible = false
 offset_left = -9.0
 offset_top = -104.0
@@ -1225,23 +1826,23 @@ text = "[E] Починить · 1 контакт"
 label_settings = SubResource("LabelSettings_xrivr")
 metadata/_edit_use_anchors_ = true
 
-[node name="Title" type="Label" parent="Actors/CoolingTerminal"]
+[node name="Title" type="Label" parent="Actors/CoolingTerminal" unique_id=1552563063]
 offset_left = -140.0
 offset_top = -85.0
 offset_right = 29.0
 offset_bottom = -46.0
-theme_override_font_sizes/font_size = 13
 theme_override_colors/font_color = Color(0.905882, 0.721569, 0.419608, 1)
 theme_override_colors/font_outline_color = Color(0.0627451, 0.109804, 0.12549, 1)
 theme_override_constants/outline_size = 4
+theme_override_font_sizes/font_size = 13
 text = "ТЕРМИНАЛ ОХЛАЖДЕНИЯ"
 
-[node name="Threat" type="Node2D" parent="."]
+[node name="Threat" type="Node2D" parent="." unique_id=1066248648]
 
-[node name="Trace" type="Line2D" parent="Threat"]
+[node name="Trace" type="Line2D" parent="Threat" unique_id=2116449124]
 visible = false
 width = 2.0
 default_color = Color(0.9, 0.4, 0.2, 0.3)
 
-[node name="ThreatSpawn" type="Marker2D" parent="."]
+[node name="ThreatSpawn" type="Marker2D" parent="." unique_id=863468856]
 position = Vector2(1460, 800)
